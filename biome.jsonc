@@ -12,7 +12,7 @@
       "indentWidth": 2,
       "indentStyle": "space",
       "lineEnding": "lf",
-      "quoteStyle": "single",
+      "quoteStyle": "double",
       "trailingCommas": "none"
     }
   }
