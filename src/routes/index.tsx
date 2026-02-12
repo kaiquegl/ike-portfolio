@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="flex flex-col gap-6">
       <Header />
+
       <main>
         <div className="container mx-auto grid max-w-7xl grid-cols-12">
           <div className="col-span-3">
@@ -19,6 +20,7 @@ function App() {
           </div>
         </div>
       </main>
+
       <footer />
     </div>
   );

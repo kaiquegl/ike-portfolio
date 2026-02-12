@@ -1,10 +1,17 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-
+import { useState } from "react";
+import { ThemeContext } from "@/core/providers/theme/theme-csr-context";
+import { createThemeStore } from "@/core/providers/theme/theme-csr-factory";
+import { getThemeSSR } from "@/core/providers/theme/theme-ssr";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
+  beforeLoad: async () => {
+    const theme = await getThemeSSR();
+    return { theme };
+  },
   head: () => ({
     meta: [
       {
@@ -15,7 +22,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1"
       },
       {
-        title: "TanStack Start Starter"
+        title: "Portfólio - Ike UI"
       }
     ],
     links: [
@@ -30,13 +37,18 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const { theme } = Route.useRouteContext();
+  const themeClass = theme === "system" ? "dark" : theme;
+  const [themeStore] = useState(() => createThemeStore({ theme }));
+
   return (
-    <html lang="pt-BR">
+    <html className={themeClass} lang="pt-BR">
       <head>
         <HeadContent />
       </head>
       <body>
-        {children}
+        <ThemeContext.Provider value={themeStore}>{children}</ThemeContext.Provider>
+
         <TanStackDevtools
           config={{
             position: "bottom-right"
