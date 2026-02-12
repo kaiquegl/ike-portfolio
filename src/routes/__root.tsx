@@ -38,11 +38,10 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme } = Route.useRouteContext();
-  const themeClass = theme === "system" ? "dark" : theme;
   const [themeStore] = useState(() => createThemeStore({ theme }));
 
   return (
-    <html className={themeClass} lang="pt-BR">
+    <html className={theme} lang="pt-BR">
       <head>
         <HeadContent />
       </head>
