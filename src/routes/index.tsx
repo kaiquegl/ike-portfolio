@@ -7,11 +7,11 @@ export const Route = createFileRoute("/")({ component: App });
 
 function App() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 lg:gap-10">
       <Header />
 
       <main>
-        <div className="container mx-auto grid max-w-7xl grid-cols-12">
+        <div className="container mx-auto grid max-w-7xl grid-cols-12 gap-4 lg:gap-6">
           <div className="col-span-3">
             <Sidebar />
           </div>
