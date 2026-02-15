@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({ component: App });
 
 function App() {
   return (
-    <div className="flex flex-col gap-6 lg:gap-10">
+    <div className="flex flex-col gap-6 py-4 lg:gap-10 lg:py-6">
       <Header />
 
       <main>

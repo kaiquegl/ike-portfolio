@@ -1,6 +1,3 @@
-import { MapPin } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
-
 export function SidebarMe() {
   return (
     <div className="flex flex-col gap-1 lg:gap-2">
@@ -13,10 +10,6 @@ export function SidebarMe() {
       </h2>
 
       <h3 className="text-primary leading-tight">Senior Frontend Engineer</h3>
-
-      <p className="mt-4 inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
-        <HugeiconsIcon icon={MapPin} size={16} /> Londrina, Brasil.
-      </p>
     </div>
   );
 }

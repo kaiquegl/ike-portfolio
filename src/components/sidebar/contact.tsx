@@ -21,7 +21,7 @@ export function SidebarContact() {
         <li>
           <Button
             render={
-              <a href="www.linkedin.com/in/kaique-gl" rel="noopener" target="_blank" title="Linkedin">
+              <a href="https://www.linkedin.com/in/kaique-gl" rel="noopener" target="_blank" title="Linkedin">
                 <HugeiconsIcon icon={Linkedin02Icon} />
                 <span className="sr-only">Github</span>
               </a>

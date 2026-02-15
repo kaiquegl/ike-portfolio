@@ -1,5 +1,6 @@
 import { Separator } from "../ui/separator";
 import { SidebarContact } from "./contact";
+import { SidebarList } from "./list";
 import { SidebarMe } from "./me";
 
 export function Sidebar() {
@@ -9,10 +10,7 @@ export function Sidebar() {
 
       <Separator />
 
-      <desc className="text-balance text-muted-foreground text-sm">
-        Desenvolvedor Frontend desde 2017, especilista em React e Next.js com mais de 7 anos construindo interfaces de
-        alta performance para produtos digitais.
-      </desc>
+      <SidebarList />
 
       <Separator />
 
