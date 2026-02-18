@@ -8,6 +8,7 @@ export function SidebarContact() {
       <ul className="inline-flex gap-3 lg:gap-4">
         <li>
           <Button
+            nativeButton={false}
             render={
               <a href="https://github.com/kaiquegl" rel="noopener" target="_blank" title="Github">
                 <HugeiconsIcon icon={GithubIcon} />
@@ -20,6 +21,7 @@ export function SidebarContact() {
         </li>
         <li>
           <Button
+            nativeButton={false}
             render={
               <a href="https://www.linkedin.com/in/kaique-gl" rel="noopener" target="_blank" title="Linkedin">
                 <HugeiconsIcon icon={Linkedin02Icon} />
@@ -32,6 +34,7 @@ export function SidebarContact() {
         </li>
         <li>
           <Button
+            nativeButton={false}
             render={
               <a href="mailto:kaikegl@proton.me" rel="noopener" target="_blank" title="E-mail">
                 <HugeiconsIcon icon={Email} />

@@ -1,5 +1,5 @@
 import { createStore } from "zustand";
-import { setThemeSSR } from "./theme-ssr";
+import { setThemeSSR } from "./theme.server";
 
 export type ThemeProps = {
   theme: "dark" | "light";

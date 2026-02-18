@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useStore } from "zustand";
 
-import { ThemeContext } from "./theme-csr-context";
-import type { ThemeState } from "./theme-csr-factory";
+import { ThemeContext } from "./theme-context.client";
+import type { ThemeState } from "./theme-factory.client";
 
 export function useTheme<T>(selector: (state: ThemeState) => T): T {
   const themeStore = useContext(ThemeContext);

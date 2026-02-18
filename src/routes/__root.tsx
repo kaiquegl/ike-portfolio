@@ -1,10 +1,13 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import { useState } from "react";
-import { ThemeContext } from "@/core/providers/theme/theme-csr-context";
-import { createThemeStore } from "@/core/providers/theme/theme-csr-factory";
-import { getThemeSSR } from "@/core/providers/theme/theme-ssr";
+
+import { getThemeSSR } from "@/core/providers/theme/theme.server";
+import { ThemeContext } from "@/core/providers/theme/theme-context.client";
+import { createThemeStore } from "@/core/providers/theme/theme-factory.client";
+
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -46,7 +49,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <ThemeContext.Provider value={themeStore}>{children}</ThemeContext.Provider>
+        <NuqsAdapter>
+          <ThemeContext.Provider value={themeStore}>{children}</ThemeContext.Provider>
+        </NuqsAdapter>
 
         <TanStackDevtools
           config={{ position: "bottom-right" }}

@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getCookie, setCookie } from "@tanstack/react-start/server";
 
-import type { ThemeProps } from "./theme-csr-factory";
+import type { ThemeProps } from "./theme-factory.client";
 
 export const getThemeSSR = createServerFn({ method: "GET" }).handler(() => {
   let theme = getCookie("theme");

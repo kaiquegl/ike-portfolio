@@ -1,6 +1,6 @@
 import { Moon, Sun } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { useTheme } from "@/core/providers/theme/theme-csr-hook";
+import { useTheme } from "@/core/providers/theme/theme-hook.client";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
