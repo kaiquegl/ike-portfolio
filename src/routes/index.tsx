@@ -1,13 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+
 import { Curriculum } from "@/components/curriculum";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 
-export const Route = createFileRoute("/")({ component: App });
+export const Route = createFileRoute("/")({
+  component: App
+});
 
 function App() {
   return (
-    <div className="flex flex-col gap-6 py-4 lg:gap-10 lg:py-6">
+    <div className="relative z-10 flex flex-col gap-6 py-4 lg:gap-10 lg:py-6">
       <Header />
 
       <main>

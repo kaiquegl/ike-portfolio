@@ -49,9 +49,74 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <NuqsAdapter>
-          <ThemeContext.Provider value={themeStore}>{children}</ThemeContext.Provider>
-        </NuqsAdapter>
+        <div className="relative min-h-screen w-full">
+          {/* LIGHT MODE BACKGROUND */}
+          <div
+            className="fixed inset-0 z-0 dark:hidden"
+            style={{
+              backgroundImage: `
+        linear-gradient(to right, #e7e5e4 1px, transparent 1px),
+        linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)
+      `,
+              backgroundSize: "20px 20px",
+              backgroundPosition: "0 0, 0 0",
+              maskImage: `
+          repeating-linear-gradient(
+              to right,
+              black 0px,
+              black 3px,
+              transparent 3px,
+              transparent 8px
+            ),
+            repeating-linear-gradient(
+              to bottom,
+              black 0px,
+              black 3px,
+              transparent 3px,
+              transparent 8px
+            ),
+            radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)
+      `,
+              WebkitMaskImage: `
+    repeating-linear-gradient(
+              to right,
+              black 0px,
+              black 3px,
+              transparent 3px,
+              transparent 8px
+            ),
+            repeating-linear-gradient(
+              to bottom,
+              black 0px,
+              black 3px,
+              transparent 3px,
+              transparent 8px
+            ),
+            radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)
+      `,
+              maskComposite: "intersect",
+              WebkitMaskComposite: "source-in"
+            }}
+          />
+          {/* DARK MODE BACKGROUND */}
+          <div
+            className="pointer-events-none fixed inset-0 z-0 hidden dark:block"
+            style={{
+              background: `
+                radial-gradient(
+                  circle at center,
+                  rgba(168, 85, 247, 0.12) 0%,
+                  rgba(168, 85, 247, 0.06) 20%,
+                  rgba(0, 0, 0, 0.0) 60%
+                )
+              `
+            }}
+          />
+
+          <NuqsAdapter>
+            <ThemeContext.Provider value={themeStore}>{children}</ThemeContext.Provider>
+          </NuqsAdapter>
+        </div>
 
         <TanStackDevtools
           config={{ position: "bottom-right" }}

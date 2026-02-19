@@ -1,4 +1,4 @@
-import { HighlightSkill } from "../highlight";
+import { HighlightSkill } from "../highlight-skill";
 
 export function CurriculumAbout() {
   return (
