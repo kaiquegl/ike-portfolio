@@ -22,7 +22,7 @@ export function CurriculumExperienceLeanwork() {
         </span>
       </div>
 
-      <VerticalTimeline className="mt-2" items={EXP_LEANWORK} />
+      <VerticalTimeline className="mt-2" current items={EXP_LEANWORK} />
     </div>
   );
 }

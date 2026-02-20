@@ -1,5 +1,7 @@
 import { CodeFolderIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { EXP_ELITESOFT } from "@/core/constants/exp-elitesoft";
+import { VerticalTimeline } from "../timeline/vertical-timeline";
 
 export function CurriculumExperienceElitesoft() {
   return (
@@ -18,9 +20,7 @@ export function CurriculumExperienceElitesoft() {
         <span className="rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">Jan 2017 ~ Jun 2018</span>
       </div>
 
-      <div>
-        <p>Front</p>
-      </div>
+      <VerticalTimeline className="mt-2" items={EXP_ELITESOFT} />
     </div>
   );
 }
