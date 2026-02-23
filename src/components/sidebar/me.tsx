@@ -1,7 +1,7 @@
 export function SidebarMe() {
   return (
     <div className="flex flex-col gap-1 lg:gap-2">
-      <div className="mb-4 h-36 w-36 overflow-hidden rounded-full border-3 border-primary">
+      <div className="h-30 w-30 overflow-hidden rounded-full border-3 border-primary">
         <img alt="Kaique Lima Foto" height={200} src="/assets/kaique-lima-foto.jfif" width={200} />
       </div>
 

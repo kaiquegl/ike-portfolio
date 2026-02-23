@@ -1,17 +1,7 @@
-import { LanguageSquareIcon, MapPin, SourceCodeSquareIcon } from "@hugeicons/core-free-icons";
+import { DiplomaIcon, LanguageSquareIcon, MapPin, SourceCodeSquareIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
-
-import { SKILLS_MAP } from "@/core/constants/skills";
-import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 
 export function SidebarList() {
-  const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault([]));
-
-  function handleSkillToggle(newSkills: string[]) {
-    setSkills(() => newSkills);
-  }
-
   return (
     <ul className="flex flex-col gap-1.5 lg:gap-3">
       <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
@@ -23,8 +13,11 @@ export function SidebarList() {
       <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
         <HugeiconsIcon icon={LanguageSquareIcon} size={20} /> Português & English.
       </li>
+      <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
+        <HugeiconsIcon icon={DiplomaIcon} size={20} /> Engenheiro da Computação.
+      </li>
 
-      <li>
+      {/* <li>
         <ToggleGroup
           className="mt-2 flex-wrap"
           multiple
@@ -45,7 +38,7 @@ export function SidebarList() {
             </ToggleGroupItem>
           ))}
         </ToggleGroup>
-      </li>
+      </li> */}
     </ul>
   );
 }

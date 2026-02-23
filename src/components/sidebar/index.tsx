@@ -5,7 +5,7 @@ import { SidebarMe } from "./me";
 
 export function Sidebar() {
   return (
-    <div className="flex flex-col gap-4 lg:gap-6">
+    <div className="sticky top-6 flex flex-col gap-4 lg:gap-6">
       <SidebarMe />
 
       <Separator />

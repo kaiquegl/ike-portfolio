@@ -8,7 +8,9 @@ export function Header() {
           portfólio - ike<span className="text-primary">/</span>2026
         </h1>
 
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
