@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
   return (
-    <div className="relative z-10 flex flex-col gap-4 pt-4 lg:gap-6 lg:pt-6">
+    <div className="relative z-10 flex flex-col gap-4 lg:gap-6">
       <Header />
 
       <main>

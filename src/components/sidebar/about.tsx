@@ -5,8 +5,8 @@ export function SidebarAbout() {
     <desc className="text-muted-foreground text-sm leading-relaxed lg:text-base">
       Especialista em <HighlightSkill value="react">React</HighlightSkill>,{" "}
       <HighlightSkill value="nextjs">Next.js</HighlightSkill> e{" "}
-      <HighlightSkill value="typescript">TypeScript</HighlightSkill>, com +9 anos de experiência. Apaixonado por criar
-      interfaces performáticas e escaláveis que impactam milhares de usuários.
+      <HighlightSkill value="typescript">TypeScript</HighlightSkill>, com +9 anos de experiência. Apaixonado por
+      resolver problemas e criar soluções.
     </desc>
   );
 }
