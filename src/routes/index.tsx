@@ -24,11 +24,11 @@ function App() {
       <Header />
 
       <main>
-        <div className="container mx-auto grid max-w-7xl grid-cols-12 gap-4 lg:gap-6">
-          <div className="col-span-3">
+        <div className="container mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:px-0">
+          <div className="order-1 col-span-1 lg:order-0 lg:col-span-3">
             <Sidebar />
           </div>
-          <div className="col-span-9">
+          <div className="order-2 col-span-1 lg:order-0 lg:col-span-9">
             <Curriculum />
           </div>
         </div>

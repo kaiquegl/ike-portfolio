@@ -48,8 +48,8 @@ export function VerticalTimeline({ items, current, className }: VerticalTimeline
                     )}
                   />
 
-                  <AccordionTrigger className="border-none hover:cursor-pointer hover:no-underline lg:py-4 lg:pr-4 lg:pl-6">
-                    <div className="inline-flex items-center gap-4">
+                  <AccordionTrigger className="border-none py-3 pr-3 pl-4 hover:cursor-pointer hover:no-underline lg:py-4 lg:pr-4 lg:pl-6">
+                    <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-4">
                       <h5
                         className="font-bold text-base text-foreground leading-snug"
                         dangerouslySetInnerHTML={{ __html: item.title }}
@@ -59,7 +59,7 @@ export function VerticalTimeline({ items, current, className }: VerticalTimeline
                     </div>
                   </AccordionTrigger>
 
-                  <AccordionContent className="flex flex-col lg:gap-6 lg:p-4 lg:pb-6">
+                  <AccordionContent className="flex flex-col gap-3 p-3 pb-4 lg:gap-6 lg:p-4 lg:pb-6">
                     {item.bulletPoints && item.bulletPoints.length > 0 && (
                       <ul className="flex flex-col gap-1 lg:gap-2">
                         {item.bulletPoints.map((point, index) => (

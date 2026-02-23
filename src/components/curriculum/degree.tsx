@@ -16,18 +16,19 @@ export function CurriculumDegree() {
     <div>
       <ol className="flex flex-col gap-3 lg:gap-4">
         <li className="flex flex-col gap-2 lg:gap-3">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex flex-col gap-0.5 lg:gap-1">
               <p>Pós-Graduação Full-Stack 360° com Inteligência Artificial</p>
               <p className="text-muted-foreground text-xs leading-tight">Rocketseat</p>
             </div>
 
-            <span className="rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">
+            <span className="shrink-0 self-start rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">
               Jan 2025 ~ <strong className="text-green-600">Hoje</strong>
             </span>
           </div>
 
           <ToggleGroup
+            className="flex-wrap"
             multiple
             onValueChange={handleSkillToggle}
             size="sm"
@@ -65,13 +66,15 @@ export function CurriculumDegree() {
         </li>
 
         <li className="flex flex-col gap-2 lg:gap-3">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex flex-col gap-0.5 lg:gap-1">
               <p>Engenharia da Computação</p>
               <p className="text-muted-foreground text-xs leading-tight">UNOPAR - Universidade Norte do Paraná</p>
             </div>
 
-            <span className="rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">Jan 2013 ~ Dez 2017</span>
+            <span className="shrink-0 self-start rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">
+              Jan 2013 ~ Dez 2017
+            </span>
           </div>
 
           <ToggleGroup
