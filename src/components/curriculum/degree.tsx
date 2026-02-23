@@ -3,7 +3,10 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { SKILLS_MAP, type SKILLS_NAMES, type SKILLS_QUERIES } from "@/core/constants/skills";
 
 export function CurriculumDegree() {
-  const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault([]));
+  const [skills, setSkills] = useQueryState(
+    "skills",
+    parseAsArrayOf(parseAsString).withDefault(["react", "nextjs", "typescript"])
+  );
 
   function handleSkillToggle(newSkills: string[]) {
     setSkills(() => newSkills);

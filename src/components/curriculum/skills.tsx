@@ -3,7 +3,10 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { SKILLS_MAP } from "@/core/constants/skills";
 
 export function CurriculumSkills() {
-  const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault([]));
+  const [skills, setSkills] = useQueryState(
+    "skills",
+    parseAsArrayOf(parseAsString).withDefault(["react", "nextjs", "typescript"])
+  );
 
   const frontendSkills = SKILLS_MAP.filter((skill) => skill.section === "frontend");
   const backendSkills = SKILLS_MAP.filter((skill) => skill.section === "backend");

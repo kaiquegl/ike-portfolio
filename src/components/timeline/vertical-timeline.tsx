@@ -14,7 +14,10 @@ type VerticalTimelineProps = {
 };
 
 export function VerticalTimeline({ items, current, className }: VerticalTimelineProps) {
-  const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault([]));
+  const [skills, setSkills] = useQueryState(
+    "skills",
+    parseAsArrayOf(parseAsString).withDefault(["react", "nextjs", "typescript"])
+  );
 
   function handleSkillToggle(newSkills: string[]) {
     setSkills(() => newSkills);

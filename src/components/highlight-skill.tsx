@@ -8,7 +8,10 @@ type HighlightSkillProps = {
 };
 
 export function HighlightSkill({ children, value }: HighlightSkillProps) {
-  const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault([]));
+  const [skills, setSkills] = useQueryState(
+    "skills",
+    parseAsArrayOf(parseAsString).withDefault(["react", "nextjs", "typescript"])
+  );
 
   function handleSkillToggle() {
     if (skills.some((skill) => skill === value)) {

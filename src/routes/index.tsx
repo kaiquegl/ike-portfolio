@@ -1,10 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-
+import { parseAsString } from "nuqs";
 import { Curriculum } from "@/components/curriculum";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 
+const searchParams = {
+  skills: parseAsString
+};
+
 export const Route = createFileRoute("/")({
+  // validateSearch: createStandardSchemaV1(searchParams),
+  // beforeLoad: ({ search }) => {
+  //   if (!search.skills) {
+  //     throw redirect({
+  //       to: "/",
+  //       replace: true,
+  //       search: { skills: "react,nextjs,typescript" }
+  //     });
+  //   }
+  // },
   component: App
 });
 
