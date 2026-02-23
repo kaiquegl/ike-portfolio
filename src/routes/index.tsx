@@ -1,12 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { parseAsString } from "nuqs";
 import { Curriculum } from "@/components/curriculum";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
-
-const searchParams = {
-  skills: parseAsString
-};
 
 export const Route = createFileRoute("/")({
   // validateSearch: createStandardSchemaV1(searchParams),
@@ -24,7 +20,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
   return (
-    <div className="relative z-10 flex flex-col gap-6 py-4 lg:gap-10 lg:py-6">
+    <div className="relative z-10 flex flex-col gap-4 pt-4 lg:gap-6 lg:pt-6">
       <Header />
 
       <main>
@@ -38,7 +34,7 @@ function App() {
         </div>
       </main>
 
-      <footer />
+      <Footer />
     </div>
   );
 }
