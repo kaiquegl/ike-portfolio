@@ -7,9 +7,6 @@ import { defineConfig, type PluginOption } from "vite";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
 const config = defineConfig({
-  build: {
-    outDir: "dist/client"
-  },
   plugins: [
     devtools(),
     // nitro(),
