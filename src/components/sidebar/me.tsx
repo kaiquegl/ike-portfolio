@@ -5,11 +5,11 @@ export function SidebarMe() {
         <img alt="Kaique Lima Foto" height={200} src="/assets/kaique-lima-foto.jfif" width={200} />
       </div>
 
-      <h2 className="font-bold text-2xl leading-tight">
+      <h2 className="mt-1 font-bold text-lg leading-tight lg:mt-0 lg:text-2xl">
         Kaique Lima<span className="text-primary">.</span>
       </h2>
 
-      <h3 className="text-primary leading-tight">Senior Frontend Engineer</h3>
+      <h3 className="font-semibold text-primary leading-tight">Senior Frontend Engineer</h3>
     </div>
   );
 }

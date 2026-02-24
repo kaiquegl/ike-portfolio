@@ -34,7 +34,7 @@ export const EXP_LEANWORK: ExpType[] = [
         <HighlightSkill value="docker">Docker</HighlightSkill>, seguros e previsíveis.
       </p>
     ],
-    tags: ["React", "Vite.js", "TypeScript", "TailwindCSS", "Shadcn UI", "Figma", "CI/CD", "Docker"]
+    tags: ["React", "Next.js", "Vite.js", "TypeScript", "TailwindCSS", "Shadcn UI", "Figma", "CI/CD", "Docker"]
   },
   {
     id: "leanwork-farmacias",

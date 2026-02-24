@@ -1,7 +1,8 @@
 import { DiplomaIcon, SourceCodeIcon, WorkHistoryIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { CurriculumDegree } from "@/components/curriculum/degree";
+
 import { Separator } from "../ui/separator";
+import { CurriculumDegree } from "./degree";
 import { CurriculumExperienceElitesoft } from "./exp-elitesoft";
 import { CurriculumExperienceLeanwork } from "./exp-leanwork";
 import { CurriculumSkills } from "./skills";
@@ -19,7 +20,7 @@ export function Curriculum() {
       <Separator /> */}
 
       <div className="flex flex-col gap-3 lg:gap-6">
-        <p className="inline-flex items-center gap-2 text-base lg:text-lg">
+        <p className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={SourceCodeIcon} size={24} /> Habilidades Técnicas
         </p>
 
@@ -29,7 +30,7 @@ export function Curriculum() {
       <Separator />
 
       <div className="flex flex-col gap-3 lg:gap-6">
-        <p className="inline-flex items-center gap-2 text-base lg:text-lg">
+        <p className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={WorkHistoryIcon} size={24} /> Experiências Profissionais
         </p>
 
@@ -41,7 +42,7 @@ export function Curriculum() {
       <Separator />
 
       <div className="flex flex-col gap-3 lg:gap-6">
-        <p className="inline-flex items-center gap-2 text-base lg:text-lg">
+        <p className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={DiplomaIcon} size={24} /> Formação Acadêmica
         </p>
 

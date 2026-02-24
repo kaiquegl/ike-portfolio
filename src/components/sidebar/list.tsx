@@ -5,16 +5,16 @@ export function SidebarList() {
   return (
     <ul className="flex flex-col gap-1.5 lg:gap-3">
       <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
-        <HugeiconsIcon icon={SourceCodeSquareIcon} size={20} /> 9+ anos.
+        <HugeiconsIcon className="size-5" icon={SourceCodeSquareIcon} /> 9+ anos.
       </li>
       <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
-        <HugeiconsIcon icon={MapPin} size={20} /> Londrina, Brasil.
+        <HugeiconsIcon className="size-5" icon={MapPin} /> Londrina, Brasil.
       </li>
       <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
-        <HugeiconsIcon icon={LanguageSquareIcon} size={20} /> Português & English.
+        <HugeiconsIcon className="size-5" icon={LanguageSquareIcon} /> Português & Inglês.
       </li>
       <li className="inline-flex items-center gap-2 text-muted-foreground text-sm leading-tight">
-        <HugeiconsIcon icon={DiplomaIcon} size={20} /> Engenheiro da Computação.
+        <HugeiconsIcon className="size-5" icon={DiplomaIcon} /> Engenheiro da Computação.
       </li>
 
       {/* <li>

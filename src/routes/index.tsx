@@ -3,6 +3,7 @@ import { Curriculum } from "@/components/curriculum";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
+import { Separator } from "@/components/ui/separator";
 
 export const Route = createFileRoute("/")({
   // validateSearch: createStandardSchemaV1(searchParams),
@@ -28,7 +29,10 @@ function App() {
           <div className="order-1 col-span-1 lg:order-0 lg:col-span-3">
             <Sidebar />
           </div>
-          <div className="order-2 col-span-1 lg:order-0 lg:col-span-9">
+
+          <div className="order-2 col-span-1 flex flex-col gap-4 lg:order-0 lg:col-span-9">
+            <Separator className="lg:hidden" />
+
             <Curriculum />
           </div>
         </div>
