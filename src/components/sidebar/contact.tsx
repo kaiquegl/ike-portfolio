@@ -1,8 +1,18 @@
-import { Email, GithubIcon, Linkedin02Icon, LinkSquare02Icon } from "@hugeicons/core-free-icons";
+import { CopyIcon, Email, GithubIcon, Linkedin02Icon, LinkSquare02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { toast } from "sonner";
+import { useTranslation } from "@/core/i18n/use-translation";
 import { Button } from "../ui/button";
 
 export function SidebarContact() {
+  const t = useTranslation();
+
+  function handleCopyEmail() {
+    console.log("handleCopyEmail");
+    navigator.clipboard.writeText("kaikegl@proton.me");
+    toast.success(t("toast.emailCopied"), { id: "email-copied" });
+  }
+
   return (
     <div>
       <ul className="flex flex-col gap-3 lg:gap-4">
@@ -52,27 +62,22 @@ export function SidebarContact() {
         </li>
         <li>
           <Button
-            className="group relative h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
-            nativeButton={false}
-            render={
-              <a href="mailto:kaikegl@proton.me" rel="noopener" target="_blank" title="E-mail">
-                <HugeiconsIcon className="size-5 lg:size-6" icon={Email} />
-
-                <div className="flex flex-col justify-center gap-0.5 py-2 lg:gap-1">
-                  <p className="text-foreground text-xs leading-tight lg:text-sm">E-mail</p>
-                  <span className="text-[0.625rem] text-muted-foreground leading-tight lg:text-xs">
-                    kaikegl@proton.me
-                  </span>
-                </div>
-
-                <HugeiconsIcon
-                  className="absolute right-2 size-4 opacity-0 transition-all group-hover:opacity-100"
-                  icon={LinkSquare02Icon}
-                />
-              </a>
-            }
+            className="group relative h-auto w-full items-center justify-start gap-3 text-left no-underline transition-colors hover:cursor-pointer"
+            onClick={() => handleCopyEmail()}
+            title="E-mail"
+            type="button"
             variant="outline"
-          />
+          >
+            <HugeiconsIcon className="size-5 lg:size-6" icon={Email} />
+            <div className="flex flex-col justify-center gap-0.5 py-2 lg:gap-1">
+              <p className="text-foreground text-xs leading-tight lg:text-sm">E-mail</p>
+              <span className="text-[0.625rem] text-muted-foreground leading-tight lg:text-xs">kaikegl@proton.me</span>
+            </div>
+            <HugeiconsIcon
+              className="absolute right-2 size-4 opacity-0 transition-all group-hover:opacity-100"
+              icon={CopyIcon}
+            />
+          </Button>
         </li>
       </ul>
     </div>

@@ -3,13 +3,13 @@ import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import { useState } from "react";
+import { Toaster } from "@/components/ui/sonner";
 import { getLocaleSSR } from "@/core/providers/locale/locale.server";
 import { LocaleContext } from "@/core/providers/locale/locale-context.client";
 import { createLocaleStore } from "@/core/providers/locale/locale-factory.client";
 import { getThemeSSR } from "@/core/providers/theme/theme.server";
 import { ThemeContext } from "@/core/providers/theme/theme-context.client";
 import { createThemeStore } from "@/core/providers/theme/theme-factory.client";
-
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -118,7 +118,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
           <NuqsAdapter>
             <ThemeContext.Provider value={themeStore}>
-              <LocaleContext.Provider value={localeStore}>{children}</LocaleContext.Provider>
+              <LocaleContext.Provider value={localeStore}>
+                {children}
+                <Toaster position="bottom-right" />
+              </LocaleContext.Provider>
             </ThemeContext.Provider>
           </NuqsAdapter>
         </div>
