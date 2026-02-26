@@ -6,37 +6,34 @@ import { useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { getLocaleSSR } from "@/core/providers/locale/locale.server";
 import { LocaleContext } from "@/core/providers/locale/locale-context.client";
+import type { Locale } from "@/core/providers/locale/locale-factory.client";
 import { createLocaleStore } from "@/core/providers/locale/locale-factory.client";
 import { getThemeSSR } from "@/core/providers/theme/theme.server";
 import { ThemeContext } from "@/core/providers/theme/theme-context.client";
 import { createThemeStore } from "@/core/providers/theme/theme-factory.client";
+import { buildSeoHead } from "@/core/seo/site-metadata";
 import appCss from "../styles.css?url";
+
+type RootRouteContext = {
+  locale: Locale;
+  theme: "dark" | "light";
+};
 
 export const Route = createRootRoute({
   beforeLoad: async () => {
     const [theme, locale] = await Promise.all([getThemeSSR(), getLocaleSSR()]);
     return { theme, locale };
   },
-  head: () => ({
-    meta: [
-      {
-        charSet: "utf-8"
-      },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1"
-      },
-      {
-        title: "Portfólio - Ike UI"
-      }
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss
-      }
-    ]
-  }),
+  head: (opts) => {
+    const locale = (opts as unknown as { context?: RootRouteContext }).context?.locale ?? "pt-BR";
+    const seo = buildSeoHead({ locale, path: "/" });
+
+    return {
+      title: seo.title,
+      meta: seo.meta,
+      links: [{ rel: "stylesheet", href: appCss }, ...seo.links]
+    };
+  },
 
   shellComponent: RootDocument
 });
@@ -50,6 +47,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html className={theme} lang={locale}>
       <head>
         <HeadContent />
+        <link href="/assets/ike-favicon.png" rel="icon" sizes="512x512" />
       </head>
       <body>
         <div className="relative min-h-screen w-full">

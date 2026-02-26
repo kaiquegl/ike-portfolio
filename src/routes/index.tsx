@@ -4,18 +4,17 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { Separator } from "@/components/ui/separator";
+import { buildPersonJsonLd, buildWebSiteJsonLd } from "@/core/seo/site-metadata";
 
 export const Route = createFileRoute("/")({
-  // validateSearch: createStandardSchemaV1(searchParams),
-  // beforeLoad: ({ search }) => {
-  //   if (!search.skills) {
-  //     throw redirect({
-  //       to: "/",
-  //       replace: true,
-  //       search: { skills: "react,nextjs,typescript" }
-  //     });
-  //   }
-  // },
+  head: () => ({
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify([buildPersonJsonLd(), buildWebSiteJsonLd()])
+      }
+    ]
+  }),
   component: App
 });
 
