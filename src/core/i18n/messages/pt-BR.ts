@@ -4,7 +4,7 @@ export const ptBR: Record<MessageKey, string> = {
   "meta.title": "Portfólio & Currículo - Kaique Lima",
   "meta.description":
     "Senior Frontend Engineer com 9+ anos de experiência construindo aplicações web de alta performance com React, TypeScript e Next.js.",
-  "header.title": "portfólio - ike",
+  "header.title": "portfólio",
   "theme.toggle": "Alternar tema",
   "theme.light": "Claro",
   "theme.dark": "Escuro",

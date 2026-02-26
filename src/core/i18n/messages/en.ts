@@ -2,7 +2,7 @@ export const en = {
   "meta.title": "Portfólio & Resume - Kaique Lima",
   "meta.description":
     "Senior Frontend Engineer with 9+ years of experience building high-performance web applications with React, TypeScript, and Next.js.",
-  "header.title": "portfolio - ike",
+  "header.title": "portfolio",
   "theme.toggle": "Toggle theme",
   "theme.light": "Light",
   "theme.dark": "Dark",
