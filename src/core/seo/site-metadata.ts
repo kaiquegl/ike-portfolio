@@ -33,7 +33,7 @@ export function buildSeoHead({ locale, path }: BuildSeoHeadOptions) {
       { property: "og:url", content: canonicalUrl },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:site_name", content: "Ike UI" },
+      { property: "og:site_name", content: "Portfolio - Kaique Lima" },
       { property: "og:image", content: "/assets/ike-graph.png" },
 
       { name: "twitter:card", content: "summary" },
@@ -51,7 +51,7 @@ export function buildPersonJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Kaique Lima",
+    name: "Kaique de Godoi Lima",
     jobTitle: "Senior Frontend Engineer",
     url: SITE_URL,
     address: {
@@ -72,7 +72,7 @@ export function buildWebSiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Ike UI",
+    name: "Portfolio - Kaique Lima",
     url: SITE_URL
   };
 }
