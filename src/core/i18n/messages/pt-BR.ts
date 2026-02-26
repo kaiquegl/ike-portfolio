@@ -3,7 +3,7 @@ import type { MessageKey } from "./en";
 export const ptBR: Record<MessageKey, string> = {
   "meta.title": "Portfólio & Currículo - Kaique Lima",
   "meta.description":
-    "Kaique Lima — Senior Frontend Engineer com 9+ anos de experiência construindo aplicações web de alta performance com React, TypeScript e Next.js.",
+    "Senior Frontend Engineer com 9+ anos de experiência construindo aplicações web de alta performance com React, TypeScript e Next.js.",
   "header.title": "portfólio - ike",
   "theme.toggle": "Alternar tema",
   "theme.light": "Claro",
