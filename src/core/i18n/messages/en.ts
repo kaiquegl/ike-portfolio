@@ -1,5 +1,5 @@
 export const en = {
-  "meta.title": "Portfolio - Kaique Lima",
+  "meta.title": "Portfólio & Resume - Kaique Lima",
   "meta.description":
     "Kaique Lima — Senior Frontend Engineer with 9+ years of experience building high-performance web applications with React, TypeScript, and Next.js.",
   "header.title": "portfolio - ike",
