@@ -1,0 +1,31 @@
+import type { MessageKey } from "./en";
+
+export const ptBR: Record<MessageKey, string> = {
+  "meta.title": "Portfólio - Ike UI",
+  "header.title": "portfólio - ike",
+  "theme.toggle": "Alternar tema",
+  "theme.light": "Claro",
+  "theme.dark": "Escuro",
+  "locale.toggle": "Alternar idioma",
+  "footer.copyright": "© 2026 Kaique Lima. Todos os direitos reservados.",
+  "footer.techIntro": "Tecnologias utilizadas:",
+  "footer.connector": "e",
+  "sidebar.photoAlt": "Kaique Lima Foto",
+  "sidebar.role": "Senior Frontend Engineer",
+  "sidebar.experience": "9+ anos.",
+  "sidebar.location": "Londrina, Brasil.",
+  "sidebar.languages": "Português & Inglês.",
+  "sidebar.degree": "Engenheiro da Computação.",
+  "curriculum.technicalSkills": "Habilidades Técnicas",
+  "curriculum.professionalExperience": "Experiências Profissionais",
+  "curriculum.education": "Formação Acadêmica",
+  "common.today": "Hoje",
+  "exp.leanwork.location": "Londrina, Brasil - Hibrido",
+  "exp.elitesoft.location": "Londrina, Brasil - Presencial",
+  "degree.postGrad.title": "Pós-Graduação Full-Stack 360° com Inteligência Artificial",
+  "degree.postGrad.institution": "Rocketseat",
+  "degree.postGrad.dateStart": "Jan 2025 ~",
+  "degree.engineering.title": "Engenharia da Computação",
+  "degree.engineering.institution": "UNOPAR - Universidade Norte do Paraná",
+  "degree.engineering.dateRange": "Jan 2013 ~ Dez 2017"
+};

@@ -3,7 +3,9 @@ import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import { useState } from "react";
-
+import { getLocaleSSR } from "@/core/providers/locale/locale.server";
+import { LocaleContext } from "@/core/providers/locale/locale-context.client";
+import { createLocaleStore } from "@/core/providers/locale/locale-factory.client";
 import { getThemeSSR } from "@/core/providers/theme/theme.server";
 import { ThemeContext } from "@/core/providers/theme/theme-context.client";
 import { createThemeStore } from "@/core/providers/theme/theme-factory.client";
@@ -12,8 +14,8 @@ import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
   beforeLoad: async () => {
-    const theme = await getThemeSSR();
-    return { theme };
+    const [theme, locale] = await Promise.all([getThemeSSR(), getLocaleSSR()]);
+    return { theme, locale };
   },
   head: () => ({
     meta: [
@@ -40,11 +42,12 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  const { theme } = Route.useRouteContext();
+  const { theme, locale } = Route.useRouteContext();
   const [themeStore] = useState(() => createThemeStore({ theme }));
+  const [localeStore] = useState(() => createLocaleStore({ locale }));
 
   return (
-    <html className={theme} lang="pt-BR">
+    <html className={theme} lang={locale}>
       <head>
         <HeadContent />
       </head>
@@ -114,7 +117,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           />
 
           <NuqsAdapter>
-            <ThemeContext.Provider value={themeStore}>{children}</ThemeContext.Provider>
+            <ThemeContext.Provider value={themeStore}>
+              <LocaleContext.Provider value={localeStore}>{children}</LocaleContext.Provider>
+            </ThemeContext.Provider>
           </NuqsAdapter>
         </div>
 

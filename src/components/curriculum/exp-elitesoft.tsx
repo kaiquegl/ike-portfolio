@@ -1,9 +1,14 @@
 import { CodeFolderIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { EXP_ELITESOFT } from "@/core/constants/exp-elitesoft";
+import { getExpElitesoft } from "@/core/constants/exp-elitesoft";
+import { useTranslation } from "@/core/i18n/use-translation";
+import { useLocale } from "@/core/providers/locale/locale-hook.client";
 import { VerticalTimeline } from "../timeline/vertical-timeline";
 
 export function CurriculumExperienceElitesoft() {
+  const t = useTranslation();
+  const locale = useLocale((state) => state.locale);
+
   return (
     <div className="flex flex-col lg:gap-3">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
@@ -13,7 +18,7 @@ export function CurriculumExperienceElitesoft() {
           </div>
           <div>
             <h5 className="font-bold text-foreground text-lg leading-snug">Elitesoft</h5>
-            <p className="text-muted-foreground text-xs leading-tight">Londrina, Brasil - Presencial</p>
+            <p className="text-muted-foreground text-xs leading-tight">{t("exp.elitesoft.location")}</p>
           </div>
         </div>
 
@@ -22,7 +27,7 @@ export function CurriculumExperienceElitesoft() {
         </span>
       </div>
 
-      <VerticalTimeline className="mt-2" items={EXP_ELITESOFT} />
+      <VerticalTimeline className="mt-2" items={getExpElitesoft(locale)} />
     </div>
   );
 }
