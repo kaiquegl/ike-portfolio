@@ -16,7 +16,7 @@ export function CurriculumDegree() {
 
   return (
     <div>
-      <ol className="flex flex-col gap-3 lg:gap-4">
+      <ol className="flex flex-col gap-4 lg:gap-6">
         <li className="flex flex-col gap-2 lg:gap-3">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex flex-col gap-0.5 lg:gap-1">

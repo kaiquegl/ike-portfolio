@@ -6,7 +6,7 @@ import { SidebarMe } from "./me";
 
 export function Sidebar() {
   return (
-    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col gap-4 lg:sticky lg:top-6 lg:gap-6">
+    <div className="flex min-h-[calc(100svh-3.5rem)] flex-col gap-4 sm:min-h-auto lg:sticky lg:top-6 lg:gap-6">
       <SidebarMe />
 
       <Separator className="hidden lg:block" />

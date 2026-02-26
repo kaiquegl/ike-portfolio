@@ -25,12 +25,12 @@ function App() {
       <Header />
 
       <main>
-        <div className="container mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:px-0">
-          <div className="order-1 col-span-1 lg:order-0 lg:col-span-3">
+        <div className="container mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:gap-6">
+          <div className="order-1 col-span-1 lg:order-0 lg:col-span-4 xl:col-span-3">
             <Sidebar />
           </div>
 
-          <div className="order-2 col-span-1 flex flex-col gap-4 lg:order-0 lg:col-span-9">
+          <div className="order-2 col-span-1 flex flex-col gap-8 lg:order-0 lg:col-span-8 xl:col-span-9">
             <Separator className="lg:hidden" />
 
             <Curriculum />

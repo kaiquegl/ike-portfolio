@@ -8,7 +8,7 @@ export function SidebarContact() {
       <ul className="flex flex-col gap-3 lg:gap-4">
         <li>
           <Button
-            className="group h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
+            className="group relative h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
             nativeButton={false}
             render={
               <a href="https://github.com/kaiquegl" rel="noopener" target="_blank" title="Github">
@@ -30,7 +30,7 @@ export function SidebarContact() {
         </li>
         <li>
           <Button
-            className="group h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
+            className="group relative h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
             nativeButton={false}
             render={
               <a href="https://www.linkedin.com/in/kaique-gl" rel="noopener" target="_blank" title="Linkedin">
@@ -52,7 +52,7 @@ export function SidebarContact() {
         </li>
         <li>
           <Button
-            className="group h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
+            className="group relative h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
             nativeButton={false}
             render={
               <a href="mailto:kaikegl@proton.me" rel="noopener" target="_blank" title="E-mail">

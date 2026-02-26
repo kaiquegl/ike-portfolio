@@ -10,7 +10,7 @@ export function CurriculumExperienceElitesoft() {
   const locale = useLocale((state) => state.locale);
 
   return (
-    <div className="flex flex-col lg:gap-3">
+    <div className="flex flex-col gap-3 lg:gap-4">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div className="inline-flex items-center gap-3">
           <div className="rounded-2xl border border-muted-foreground/40 bg-muted p-2.5 dark:bg-muted/30">

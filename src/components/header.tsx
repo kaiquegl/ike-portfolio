@@ -7,7 +7,7 @@ export function Header() {
 
   return (
     <header className="border-border border-b py-3 lg:py-4">
-      <div className="container mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-0">
+      <div className="container mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
         <h1 className="text-accent-foreground text-sm sm:text-base lg:text-lg">
           {t("header.title")}
           <span className="text-primary">/</span>2026
