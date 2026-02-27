@@ -23,6 +23,7 @@ export function buildSeoHead({ locale, path }: BuildSeoHeadOptions) {
   return {
     title,
     meta: [
+      { title },
       { charSet: "utf-8" as const },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "description", content: description },
