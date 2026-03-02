@@ -9,11 +9,11 @@ export function SidebarMe() {
         <img alt={t("sidebar.photoAlt")} height={200} src="/assets/kaique-lima-foto.jfif" width={200} />
       </div>
 
-      <h2 className="mt-1 font-bold text-lg leading-tight lg:mt-0 lg:text-2xl">
+      <h1 className="mt-1 font-bold text-lg leading-tight lg:mt-0 lg:text-2xl">
         Kaique Lima<span className="text-primary">.</span>
-      </h2>
-
-      <h3 className="font-semibold text-primary leading-tight">{t("sidebar.role")}</h3>
+        <br />
+        <span className="font-semibold text-base text-primary leading-tight lg:text-lg">{t("sidebar.role")}</span>
+      </h1>
     </div>
   );
 }

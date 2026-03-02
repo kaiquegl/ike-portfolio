@@ -2,9 +2,8 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { getLocaleSSR } from "@/core/providers/locale/locale.server";
 import { LocaleContext } from "@/core/providers/locale/locale-context.client";
 import type { Locale } from "@/core/providers/locale/locale-factory.client";
 import { createLocaleStore } from "@/core/providers/locale/locale-factory.client";
@@ -20,13 +19,17 @@ type RootRouteContext = {
 };
 
 export const Route = createRootRoute({
-  beforeLoad: async () => {
-    const [theme, locale] = await Promise.all([getThemeSSR(), getLocaleSSR()]);
+  beforeLoad: async ({ location }: { location: { pathname: string } }) => {
+    const isEnglishPath =
+      location.pathname === "/en" || location.pathname.startsWith("/en/");
+    const locale: Locale = isEnglishPath ? "en" : "pt-BR";
+    const theme = await getThemeSSR();
     return { theme, locale };
   },
   head: (opts) => {
     const locale = (opts as unknown as { context?: RootRouteContext }).context?.locale ?? "pt-BR";
-    const seo = buildSeoHead({ locale, path: "/" });
+    const path = locale === "en" ? "/en" : "/";
+    const seo = buildSeoHead({ locale, path });
 
     return {
       title: seo.title,
@@ -42,6 +45,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme, locale } = Route.useRouteContext();
   const [themeStore] = useState(() => createThemeStore({ theme }));
   const [localeStore] = useState(() => createLocaleStore({ locale }));
+
+  useEffect(() => {
+    localeStore.setState({ locale });
+    document.documentElement.lang = locale;
+  }, [locale, localeStore]);
 
   return (
     <html className={theme} lang={locale}>

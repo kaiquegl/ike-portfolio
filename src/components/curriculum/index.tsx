@@ -14,9 +14,9 @@ export function Curriculum() {
   return (
     <div className="flex flex-col gap-8 border-border lg:gap-10 lg:border-l lg:pl-6">
       <div className="flex flex-col gap-3 lg:gap-6">
-        <p className="inline-flex items-center gap-2 text-lg lg:text-xl">
+        <h3 className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={SourceCodeIcon} size={24} /> {t("curriculum.technicalSkills")}
-        </p>
+        </h3>
 
         <CurriculumSkills />
       </div>
@@ -24,10 +24,10 @@ export function Curriculum() {
       <Separator />
 
       <div className="flex flex-col gap-8 lg:gap-6">
-        <p className="inline-flex items-center gap-2 text-lg lg:text-xl">
+        <h4 className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={WorkHistoryIcon} size={24} />{" "}
           {t("curriculum.professionalExperience")}
-        </p>
+        </h4>
 
         <CurriculumExperienceLeanwork />
 
@@ -37,9 +37,9 @@ export function Curriculum() {
       <Separator />
 
       <div className="flex flex-col gap-3 lg:gap-6">
-        <p className="inline-flex items-center gap-2 text-lg lg:text-xl">
+        <h5 className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={DiplomaIcon} size={24} /> {t("curriculum.education")}
-        </p>
+        </h5>
 
         <CurriculumDegree />
       </div>

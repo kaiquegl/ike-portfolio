@@ -5,7 +5,7 @@ export function SidebarAbout() {
   const locale = useLocale((state) => state.locale);
 
   return (
-    <desc className="text-center text-muted-foreground text-sm leading-relaxed lg:text-left">
+    <h2 className="text-center text-muted-foreground text-sm leading-relaxed lg:text-left">
       {locale === "en" ? (
         <>
           Specialist in <HighlightSkill value="react">React</HighlightSkill>,{" "}
@@ -21,6 +21,6 @@ export function SidebarAbout() {
           resolver problemas e criar soluções.
         </>
       )}
-    </desc>
+    </h2>
   );
 }

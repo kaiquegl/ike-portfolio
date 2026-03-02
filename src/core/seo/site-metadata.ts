@@ -9,6 +9,9 @@ const MESSAGES: Record<Locale, Record<MessageKey, string>> = {
   "pt-BR": ptBR
 };
 
+const OG_IMAGE_URL = `${SITE_URL}/assets/ike-graph.png`;
+const OG_IMAGE_ALT = "Kaique Lima – Senior Frontend Engineer portfolio preview";
+
 type BuildSeoHeadOptions = {
   locale: Locale;
   path: string;
@@ -18,7 +21,7 @@ export function buildSeoHead({ locale, path }: BuildSeoHeadOptions) {
   const messages = MESSAGES[locale];
   const title = messages["meta.title"];
   const description = messages["meta.description"];
-  const canonicalUrl = `${SITE_URL}${path === "/" ? "" : path}`;
+  const canonicalUrl = `${SITE_URL}${path}`;
 
   return {
     title,
@@ -35,15 +38,23 @@ export function buildSeoHead({ locale, path }: BuildSeoHeadOptions) {
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:site_name", content: "Portfolio - Kaique Lima" },
-      { property: "og:image", content: "/assets/ike-graph.png" },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { property: "og:image:alt", content: OG_IMAGE_ALT },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
 
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description }
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: OG_IMAGE_URL },
+      { name: "twitter:image:alt", content: OG_IMAGE_ALT }
     ],
     links: [
       { rel: "canonical", href: canonicalUrl },
-      { rel: "manifest", href: "/manifest.json" }
+      { rel: "manifest", href: "/manifest.json" },
+      { rel: "alternate", hrefLang: "pt-BR", href: `${SITE_URL}/` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/en` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/` }
     ]
   };
 }
@@ -55,6 +66,8 @@ export function buildPersonJsonLd() {
     name: "Kaique de Godoi Lima",
     jobTitle: "Senior Frontend Engineer",
     url: SITE_URL,
+    image: `${SITE_URL}/assets/kaique-lima-foto.jfif`,
+    sameAs: ["https://github.com/kaiquegl", "https://www.linkedin.com/in/kaique-gl"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Londrina",
