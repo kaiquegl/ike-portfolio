@@ -20,8 +20,7 @@ type RootRouteContext = {
 
 export const Route = createRootRoute({
   beforeLoad: async ({ location }: { location: { pathname: string } }) => {
-    const isEnglishPath =
-      location.pathname === "/en" || location.pathname.startsWith("/en/");
+    const isEnglishPath = location.pathname === "/en" || location.pathname.startsWith("/en/");
     const locale: Locale = isEnglishPath ? "en" : "pt-BR";
     const theme = await getThemeSSR();
     return { theme, locale };
@@ -41,6 +40,8 @@ export const Route = createRootRoute({
   shellComponent: RootDocument
 });
 
+const GOOGLE_TAG_MANAGER_ID = "G-SH541SEFFZ";
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { theme, locale } = Route.useRouteContext();
   const [themeStore] = useState(() => createThemeStore({ theme }));
@@ -56,6 +57,17 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
         <link href="/assets/ike-favicon.png" rel="icon" sizes="512x512" />
+
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_MANAGER_ID}`} />
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${GOOGLE_TAG_MANAGER_ID}');
+          `}
+        </script>
       </head>
       <body>
         <div className="relative min-h-screen w-full">
