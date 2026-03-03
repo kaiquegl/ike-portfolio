@@ -15,7 +15,13 @@ const config = defineConfig({
       projects: ["./tsconfig.json"]
     }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        autoStaticPathsDiscovery: true
+      }
+    }),
     netlify() as PluginOption,
     viteReact()
   ]

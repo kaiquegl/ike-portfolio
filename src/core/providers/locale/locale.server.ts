@@ -1,5 +1,7 @@
+/** biome-ignore-all lint/suspicious/noExplicitAny: vite config */
 import { createServerFn } from "@tanstack/react-start";
 import { getCookie, getRequestHeader, setCookie } from "@tanstack/react-start/server";
+import { staticFunctionMiddleware } from "@tanstack/start-static-server-functions";
 
 import type { LocaleProps } from "./locale-factory.client";
 
@@ -31,29 +33,32 @@ function parseAcceptLanguage(header: string): SupportedLocale {
   return DEFAULT_LOCALE;
 }
 
-export const getLocaleSSR = createServerFn({ method: "GET" }).handler(() => {
-  const localeCookie = getCookie("locale");
+export const getLocaleSSR = createServerFn({ method: "GET" })
+  .middleware([staticFunctionMiddleware] as any)
+  .handler(() => {
+    const localeCookie = getCookie("locale");
 
-  if (localeCookie === "en" || localeCookie === "pt-BR") {
-    return localeCookie;
-  }
-
-  let detectedLocale: SupportedLocale = DEFAULT_LOCALE;
-
-  try {
-    const acceptLanguage = getRequestHeader("accept-language");
-    if (acceptLanguage) {
-      detectedLocale = parseAcceptLanguage(acceptLanguage);
+    if (localeCookie === "en" || localeCookie === "pt-BR") {
+      return localeCookie;
     }
-  } catch {
-    // Header detection may fail in some environments; fall back to default
-  }
 
-  setCookie("locale", detectedLocale);
-  return detectedLocale;
-});
+    let detectedLocale: SupportedLocale = DEFAULT_LOCALE;
+
+    try {
+      const acceptLanguage = getRequestHeader("accept-language");
+      if (acceptLanguage) {
+        detectedLocale = parseAcceptLanguage(acceptLanguage);
+      }
+    } catch {
+      // Header detection may fail in some environments; fall back to default
+    }
+
+    setCookie("locale", detectedLocale);
+    return detectedLocale;
+  });
 
 export const setLocaleSSR = createServerFn({ method: "POST" })
+  .middleware([staticFunctionMiddleware] as any)
   .inputValidator((data: { locale: LocaleProps["locale"] }) => data)
   .handler(({ data }) => {
     setCookie("locale", data.locale);

@@ -56,7 +56,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html className={theme} lang={locale}>
       <head>
         <HeadContent />
-        <link href="/assets/ike-favicon.png" rel="icon" sizes="512x512" />
+        <link href="/assets/ike-favicon-32x32.png" rel="icon" sizes="32x32" />
+        <link href="/assets/ike-favicon-512x512.png" rel="icon" sizes="512x512" />
+        <link as="image" fetchPriority="high" href="/assets/kaique-lima-foto.webp" rel="preload" />
 
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_MANAGER_ID}`} />
         <script>
