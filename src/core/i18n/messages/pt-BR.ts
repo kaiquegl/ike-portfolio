@@ -30,5 +30,6 @@ export const ptBR: Record<MessageKey, string> = {
   "degree.engineering.title": "Engenharia da Computação",
   "degree.engineering.institution": "UNOPAR - Universidade Norte do Paraná",
   "degree.engineering.dateRange": "Jan 2013 ~ Dez 2017",
-  "toast.emailCopied": "E-mail copiado para a área de transferência"
+  "toast.emailCopied": "E-mail copiado para a área de transferência",
+  "sidebar.downloadResume": "Baixar Currículo"
 };

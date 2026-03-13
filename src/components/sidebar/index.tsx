@@ -3,10 +3,11 @@ import { Separator } from "../ui/separator";
 import { SidebarContact } from "./contact";
 import { SidebarList } from "./list";
 import { SidebarMe } from "./me";
+import { SidebarResumeDownload } from "./resume-download";
 
 export function Sidebar() {
   return (
-    <div className="flex min-h-[calc(100svh-3.5rem)] flex-col gap-4 sm:min-h-auto lg:sticky lg:top-6 lg:gap-6">
+    <div className="flex flex-col gap-4 lg:sticky lg:top-6 lg:gap-6">
       <SidebarMe />
 
       <Separator className="hidden lg:block" />
@@ -20,6 +21,8 @@ export function Sidebar() {
       <Separator className="hidden lg:block" />
 
       <SidebarContact />
+
+      <SidebarResumeDownload />
     </div>
   );
 }

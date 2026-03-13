@@ -28,7 +28,8 @@ export const en = {
   "degree.engineering.title": "Computer Engineering",
   "degree.engineering.institution": "UNOPAR - Universidade Norte do Paraná",
   "degree.engineering.dateRange": "Jan 2013 ~ Dec 2017",
-  "toast.emailCopied": "Email copied to clipboard"
+  "toast.emailCopied": "Email copied to clipboard",
+  "sidebar.downloadResume": "Download Resume"
 } as const;
 
 export type MessageKey = keyof typeof en;
