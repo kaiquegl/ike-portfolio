@@ -20,7 +20,7 @@ export function CurriculumSkills() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-6 xl:grid-cols-2">
       <div className="flex flex-col gap-2">
-        <p>Frontend</p>
+        <h3 className="font-medium text-muted-foreground text-sm">Frontend</h3>
         <ToggleGroup
           className="mt-2 flex-wrap"
           multiple
@@ -44,7 +44,7 @@ export function CurriculumSkills() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p>Backend</p>
+        <h3 className="font-medium text-muted-foreground text-sm">Backend</h3>
         <ToggleGroup
           className="mt-2 flex-wrap"
           multiple
@@ -68,7 +68,7 @@ export function CurriculumSkills() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p>Design</p>
+        <h3 className="font-medium text-muted-foreground text-sm">Design</h3>
         <ToggleGroup
           className="mt-2 flex-wrap"
           multiple
@@ -92,7 +92,7 @@ export function CurriculumSkills() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p>DevOps</p>
+        <h3 className="font-medium text-muted-foreground text-sm">DevOps</h3>
         <ToggleGroup
           className="mt-2 flex-wrap"
           multiple

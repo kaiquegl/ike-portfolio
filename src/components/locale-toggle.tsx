@@ -12,10 +12,12 @@ export function LocaleToggle() {
     navigate({ to: locale === "en" ? "/" : "/en" });
   };
 
+  const switchToPortuguese = locale === "en";
+  const accessibleLabel = switchToPortuguese ? t("locale.switchToPt") : t("locale.switchToEn");
+
   return (
-    <Button onClick={handleToggle} size="icon" variant="outline">
-      <span className="font-semibold text-xs">{locale === "en" ? "EN" : "PT"}</span>
-      <span className="sr-only">{t("locale.toggle")}</span>
+    <Button aria-label={accessibleLabel} onClick={handleToggle} size="icon" title={accessibleLabel} variant="outline">
+      <span className="font-semibold text-xs">{switchToPortuguese ? "PT" : "EN"}</span>
     </Button>
   );
 }

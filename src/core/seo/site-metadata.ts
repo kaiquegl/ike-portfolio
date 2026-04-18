@@ -31,6 +31,7 @@ export function buildSeoHead({ locale, path }: BuildSeoHeadOptions) {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "description", content: description },
       { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#000000" },
 
       { property: "og:type", content: "website" },
       { property: "og:locale", content: locale === "pt-BR" ? "pt_BR" : "en_US" },
@@ -66,7 +67,7 @@ export function buildPersonJsonLd() {
     name: "Kaique de Godoi Lima",
     jobTitle: "Senior Frontend Engineer",
     url: SITE_URL,
-    image: `${SITE_URL}/assets/kaique-lima-foto.jfif`,
+    image: `${SITE_URL}/assets/kaique-lima-foto.webp`,
     sameAs: ["https://github.com/kaiquegl", "https://www.linkedin.com/in/kaique-gl"],
     address: {
       "@type": "PostalAddress",

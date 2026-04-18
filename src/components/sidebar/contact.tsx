@@ -8,7 +8,6 @@ export function SidebarContact() {
   const t = useTranslation();
 
   function handleCopyEmail() {
-    console.log("handleCopyEmail");
     navigator.clipboard.writeText("kaikegl@proton.me");
     toast.success(t("toast.emailCopied"), { id: "email-copied" });
   }
@@ -21,7 +20,7 @@ export function SidebarContact() {
             className="group relative h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
             nativeButton={false}
             render={
-              <a href="https://github.com/kaiquegl" rel="noopener" target="_blank" title="Github">
+              <a href="https://github.com/kaiquegl" rel="noopener noreferrer" target="_blank" title="Github">
                 <HugeiconsIcon className="size-5 lg:size-6" icon={GithubIcon} />
 
                 <div className="flex flex-col justify-center gap-0.5 py-2 lg:gap-1">
@@ -43,7 +42,12 @@ export function SidebarContact() {
             className="group relative h-auto w-full items-center justify-start gap-3 no-underline transition-colors"
             nativeButton={false}
             render={
-              <a href="https://www.linkedin.com/in/kaique-gl" rel="noopener" target="_blank" title="Linkedin">
+              <a
+                href="https://www.linkedin.com/in/kaique-gl"
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Linkedin"
+              >
                 <HugeiconsIcon className="size-5 lg:size-6" icon={Linkedin02Icon} />
 
                 <div className="flex flex-col justify-center gap-0.5 py-2 lg:gap-1">

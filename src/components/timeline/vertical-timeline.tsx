@@ -50,7 +50,7 @@ export function VerticalTimeline({ items, current, className }: VerticalTimeline
 
                   <AccordionTrigger className="border-none py-3 pr-3 pl-4 hover:cursor-pointer hover:no-underline lg:py-4 lg:pr-4 lg:pl-6">
                     <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-4">
-                      <h5
+                      <h3
                         className="font-bold text-base text-foreground leading-snug"
                         dangerouslySetInnerHTML={{ __html: item.title }}
                       />
