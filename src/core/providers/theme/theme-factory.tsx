@@ -12,22 +12,18 @@ export type ThemeState = {
 export type ThemeStore = ReturnType<typeof createThemeStore>;
 
 export const createThemeStore = (initProps?: ThemeProps) => {
-  const DEFAULT_PROPS: ThemeProps = {
+  const defaultThemeProps: ThemeProps = {
     theme: "dark"
   };
 
-  return createStore<ThemeState>()((set) => ({
-    ...DEFAULT_PROPS,
+  return createStore<ThemeState>()((setState) => ({
+    ...defaultThemeProps,
     ...initProps,
     setTheme: (theme: ThemeProps["theme"]) => {
-      // SSR -> setCookie
       setThemeSSR({ data: { theme } });
-
-      // CSR -> change HTML
       document.documentElement.classList.remove("dark", "light");
       document.documentElement.classList.add(theme);
-
-      return set({ theme });
+      return setState({ theme });
     }
   }));
 };

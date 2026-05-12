@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
-import type { Locale } from "@/core/providers/locale/locale-factory.client";
-import { useLocale } from "@/core/providers/locale/locale-hook.client";
+import type { Locale } from "@/core/providers/locale/locale-factory";
+import { useLocale } from "@/core/providers/locale/locale-hook";
 import { en, type MessageKey } from "./messages/en";
 import { ptBR } from "./messages/pt-BR";
 

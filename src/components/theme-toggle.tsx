@@ -1,7 +1,7 @@
 import { Moon, Sun } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { useTheme } from "@/core/providers/theme/theme-hook.client";
+import { useTheme } from "@/core/providers/theme/theme-hook";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 

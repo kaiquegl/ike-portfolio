@@ -7,8 +7,8 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Toaster as Sonner, type ToasterProps } from "sonner";
-import type { ThemeProps } from "@/core/providers/theme/theme-factory.client";
-import { useTheme } from "@/core/providers/theme/theme-hook.client";
+import type { ThemeProps } from "@/core/providers/theme/theme-factory";
+import { useTheme } from "@/core/providers/theme/theme-hook";
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const theme = useTheme((state) => state.theme);

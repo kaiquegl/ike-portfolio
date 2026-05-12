@@ -4,12 +4,12 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { LocaleContext } from "@/core/providers/locale/locale-context.client";
-import type { Locale } from "@/core/providers/locale/locale-factory.client";
-import { createLocaleStore } from "@/core/providers/locale/locale-factory.client";
-import { getThemeSSR } from "@/core/providers/theme/theme.server";
-import { ThemeContext } from "@/core/providers/theme/theme-context.client";
-import { createThemeStore } from "@/core/providers/theme/theme-factory.client";
+import { LocaleContext } from "@/core/providers/locale/locale-context";
+import type { Locale } from "@/core/providers/locale/locale-factory";
+import { createLocaleStore } from "@/core/providers/locale/locale-factory";
+import { getThemeSSR } from "@/core/providers/theme/theme-server-functions";
+import { ThemeContext } from "@/core/providers/theme/theme-context";
+import { createThemeStore } from "@/core/providers/theme/theme-factory";
 import { buildSeoHead } from "@/core/seo/site-metadata";
 import appCss from "../styles.css?url";
 

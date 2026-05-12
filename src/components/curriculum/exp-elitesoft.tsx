@@ -2,7 +2,7 @@ import { CodeFolderIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { getExpElitesoft } from "@/core/constants/exp-elitesoft";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { useLocale } from "@/core/providers/locale/locale-hook.client";
+import { useLocale } from "@/core/providers/locale/locale-hook";
 import { VerticalTimeline } from "../timeline/vertical-timeline";
 
 export function CurriculumExperienceElitesoft() {

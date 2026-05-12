@@ -1,6 +1,6 @@
 import { HighlightSkill } from "@/components/highlight-skill";
 import type { ExpType } from "@/core/constants/exp-type";
-import type { Locale } from "@/core/providers/locale/locale-factory.client";
+import type { Locale } from "@/core/providers/locale/locale-factory";
 
 const EXP_LEANWORK_PT_BR: ExpType[] = [
   {

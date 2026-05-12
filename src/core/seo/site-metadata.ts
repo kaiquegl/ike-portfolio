@@ -1,6 +1,6 @@
 import { en, type MessageKey } from "@/core/i18n/messages/en";
 import { ptBR } from "@/core/i18n/messages/pt-BR";
-import type { Locale } from "@/core/providers/locale/locale-factory.client";
+import type { Locale } from "@/core/providers/locale/locale-factory";
 
 export const SITE_URL = "https://ike-dev.com.br";
 

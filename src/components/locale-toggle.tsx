@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { useLocale } from "@/core/providers/locale/locale-hook.client";
+import { useLocale } from "@/core/providers/locale/locale-hook";
 import { Button } from "./ui/button";
 
 export function LocaleToggle() {

@@ -1,7 +1,7 @@
 import { Download05Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { useLocation } from "@tanstack/react-router";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { useLocale } from "@/core/providers/locale/locale-hook.client";
 import { Button } from "../ui/button";
 
 const RESUME_BY_LOCALE: Record<string, string> = {
@@ -11,7 +11,8 @@ const RESUME_BY_LOCALE: Record<string, string> = {
 
 export function SidebarResumeDownload() {
   const t = useTranslation();
-  const locale = useLocale((state) => state.locale);
+  const { pathname } = useLocation();
+  const locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "pt-BR";
   const resumeUrl = RESUME_BY_LOCALE[locale] ?? RESUME_BY_LOCALE["pt-BR"];
 
   return (

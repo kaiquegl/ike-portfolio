@@ -1,5 +1,5 @@
 import { HighlightSkill } from "@/components/highlight-skill";
-import { useLocale } from "@/core/providers/locale/locale-hook.client";
+import { useLocale } from "@/core/providers/locale/locale-hook";
 
 export function SidebarAbout() {
   const locale = useLocale((state) => state.locale);

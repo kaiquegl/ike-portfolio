@@ -3,7 +3,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { VerticalTimeline } from "@/components/timeline/vertical-timeline";
 import { getExpLeanwork } from "@/core/constants/exp-leanwork";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { useLocale } from "@/core/providers/locale/locale-hook.client";
+import { useLocale } from "@/core/providers/locale/locale-hook";
 
 export function CurriculumExperienceLeanwork() {
   const t = useTranslation();

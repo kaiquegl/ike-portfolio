@@ -14,19 +14,17 @@ export type LocaleState = {
 export type LocaleStore = ReturnType<typeof createLocaleStore>;
 
 export const createLocaleStore = (initProps?: LocaleProps) => {
-  const DEFAULT_PROPS: LocaleProps = {
+  const defaultLocaleProps: LocaleProps = {
     locale: "pt-BR"
   };
 
-  return createStore<LocaleState>()((set) => ({
-    ...DEFAULT_PROPS,
+  return createStore<LocaleState>()((setState) => ({
+    ...defaultLocaleProps,
     ...initProps,
     setLocale: (locale: Locale) => {
       setLocaleSSR({ data: { locale } });
-
       document.documentElement.lang = locale;
-
-      return set({ locale });
+      return setState({ locale });
     }
   }));
 };
