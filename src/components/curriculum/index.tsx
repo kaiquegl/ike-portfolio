@@ -1,4 +1,4 @@
-import { DiplomaIcon, SourceCodeIcon, WorkHistoryIcon } from "@hugeicons/core-free-icons";
+import { WorkHistoryIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTranslation } from "@/core/i18n/use-translation";
 
@@ -13,10 +13,8 @@ export function Curriculum() {
 
   return (
     <div className="flex flex-col gap-8 lg:gap-10">
-      <section className="flex flex-col gap-3 lg:gap-6" id="skills">
-        <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
-          <HugeiconsIcon className="text-primary" icon={SourceCodeIcon} size={24} /> {t("curriculum.technicalSkills")}
-        </h2>
+      <section className="flex flex-col gap-3 sm:gap-4" id="skills">
+        <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("curriculum.technicalSkills")}</h2>
 
         <CurriculumSkills />
       </section>
@@ -36,10 +34,8 @@ export function Curriculum() {
 
       <Separator />
 
-      <section className="flex flex-col gap-3 lg:gap-6" id="education">
-        <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
-          <HugeiconsIcon className="text-primary" icon={DiplomaIcon} size={24} /> {t("curriculum.education")}
-        </h2>
+      <section className="flex flex-col gap-3 sm:gap-4" id="education">
+        <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("curriculum.education")}</h2>
 
         <CurriculumDegree />
       </section>

@@ -7,7 +7,7 @@ import { Hero } from "@/components/hero";
 
 export function PortfolioPage() {
   return (
-    <div className="relative z-10 flex flex-col gap-4 pb-8 lg:gap-6 lg:pb-12">
+    <div className="relative z-10 flex flex-col gap-4 lg:gap-6">
       <div className="sticky top-0 z-20 bg-background/10 backdrop-blur-sm">
         <div className="container mx-auto w-full max-w-5xl px-4 sm:px-6">
           <Header />
