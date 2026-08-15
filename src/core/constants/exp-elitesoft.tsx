@@ -5,10 +5,10 @@ import type { Locale } from "@/core/providers/locale/locale-factory";
 const EXP_ELITESOFT_PT_BR: ExpType[] = [
   {
     id: "elitesoft",
-    title:
-      "Junior Fullstack Developer & Suporte | <a href='https://www.elitesoft.com.br/' target='_blank' rel='noopener noreferrer'>Elitesoft</a>",
-    period: "Jan 2017 - Jun 2018",
-
+    companyName: "Elitesoft",
+    companyUrl: "https://www.elitesoft.com.br/",
+    roleKey: "exp.role.fullstack",
+    period: "Jan 2017 ~ Jun 2018",
     bulletPoints: [
       <p key="elitesoft">
         Desenvolvimento e manutenção de sistemas em <HighlightSkill value="php">PHP</HighlightSkill> e{" "}
@@ -23,10 +23,10 @@ const EXP_ELITESOFT_PT_BR: ExpType[] = [
 const EXP_ELITESOFT_EN: ExpType[] = [
   {
     id: "elitesoft",
-    title:
-      "Junior Fullstack Developer & Support | <a href='https://www.elitesoft.com.br/' target='_blank' rel='noopener noreferrer'>Elitesoft</a>",
-    period: "Jan 2017 - Jun 2018",
-
+    companyName: "Elitesoft",
+    companyUrl: "https://www.elitesoft.com.br/",
+    roleKey: "exp.role.fullstack",
+    period: "Jan 2017 ~ Jun 2018",
     bulletPoints: [
       <p key="elitesoft">
         Development and maintenance of systems in <HighlightSkill value="php">PHP</HighlightSkill> and{" "}

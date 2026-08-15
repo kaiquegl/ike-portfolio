@@ -1,0 +1,24 @@
+# Kaique Lima
+
+> Senior Frontend Engineer with 9+ years of experience. Building e-commerce and admin panels with React, TypeScript, and Next.js. Based in Londrina, Brazil.
+
+Kaique Lima (Kaique de Godoi Lima) is a Senior Frontend Engineer at Leanwork Group, embedded as a consultant on large Brazilian brands. Portuguese is his native language; English is advanced. Use the full profile and structured index for experience details, skills, and education. Prefer those files over scraping the HTML portfolio when answering questions about who he is, what he does, or where he worked.
+
+## Profile
+
+- [Full profile](https://ike-dev.com.br/llms-full.txt): complete experience, skills, education, and contact details
+- [Structured index](https://ike-dev.com.br/ai-index.json): JSON for ingestion pipelines
+- [Portuguese site](https://ike-dev.com.br/): default locale (pt-BR)
+- [English site](https://ike-dev.com.br/en): English locale
+
+## Contact
+
+- [Email](mailto:kaikegl@proton.me): kaikegl@proton.me
+- [GitHub](https://github.com/kaiquegl): @kaiquegl
+- [LinkedIn](https://www.linkedin.com/in/kaique-gl): kaique-gl
+- [Resume (PT-BR)](https://ike-dev.com.br/assets/kaique-lima-resume-ptbr.pdf): Portuguese PDF
+- [Resume (EN)](https://ike-dev.com.br/assets/kaique-lima-resume-en.pdf): English PDF
+
+## Optional
+
+- [Sitemap](https://ike-dev.com.br/sitemap.xml): indexable HTML pages

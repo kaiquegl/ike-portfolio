@@ -1,48 +1,31 @@
-import { DiplomaIcon, SourceCodeIcon, WorkHistoryIcon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { useTranslation } from "@/core/i18n/use-translation";
 
-import { Separator } from "../ui/separator";
 import { CurriculumDegree } from "./degree";
-import { CurriculumExperienceElitesoft } from "./exp-elitesoft";
-import { CurriculumExperienceLeanwork } from "./exp-leanwork";
+import { CurriculumExperience } from "./experience";
 import { CurriculumSkills } from "./skills";
 
 export function Curriculum() {
   const t = useTranslation();
 
   return (
-    <div className="flex flex-col gap-8 border-border lg:gap-10 lg:border-l lg:pl-6">
-      <div className="flex flex-col gap-3 lg:gap-6">
-        <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
-          <HugeiconsIcon className="text-primary" icon={SourceCodeIcon} size={24} /> {t("curriculum.technicalSkills")}
-        </h2>
+    <div className="flex flex-col gap-8 lg:gap-10">
+      <section className="flex flex-col gap-3 sm:gap-4" id="skills">
+        <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("nav.skills")}</h2>
 
         <CurriculumSkills />
-      </div>
+      </section>
 
-      <Separator />
+      <section className="flex flex-col gap-3 sm:gap-4" id="experience">
+        <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("nav.experience")}</h2>
 
-      <div className="flex flex-col gap-8 lg:gap-6">
-        <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
-          <HugeiconsIcon className="text-primary" icon={WorkHistoryIcon} size={24} />{" "}
-          {t("curriculum.professionalExperience")}
-        </h2>
+        <CurriculumExperience />
+      </section>
 
-        <CurriculumExperienceLeanwork />
-
-        <CurriculumExperienceElitesoft />
-      </div>
-
-      <Separator />
-
-      <div className="flex flex-col gap-3 lg:gap-6">
-        <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
-          <HugeiconsIcon className="text-primary" icon={DiplomaIcon} size={24} /> {t("curriculum.education")}
-        </h2>
+      <section className="flex flex-col gap-3 sm:gap-4" id="education">
+        <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("nav.education")}</h2>
 
         <CurriculumDegree />
-      </div>
+      </section>
     </div>
   );
 }

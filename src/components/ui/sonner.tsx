@@ -7,12 +7,8 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Toaster as Sonner, type ToasterProps } from "sonner";
-import type { ThemeProps } from "@/core/providers/theme/theme-factory";
-import { useTheme } from "@/core/providers/theme/theme-hook";
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const theme = useTheme((state) => state.theme);
-
   return (
     <Sonner
       className="toaster group"
@@ -31,7 +27,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           "--border-radius": "var(--radius)"
         } as React.CSSProperties
       }
-      theme={theme as ThemeProps["theme"]}
+      theme="dark"
       toastOptions={{
         classNames: {
           toast: "cn-toast"

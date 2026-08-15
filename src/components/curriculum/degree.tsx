@@ -1,105 +1,123 @@
 import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SKILLS_MAP, type SKILLS_NAMES, type SKILLS_QUERIES } from "@/core/constants/skills";
+import type { MessageKey } from "@/core/i18n/messages/en";
 import { useTranslation } from "@/core/i18n/use-translation";
+import { cn } from "@/lib/utils";
+
+const DEFAULT_SKILLS = ["react", "nextjs", "typescript"];
+
+type DegreeItem = {
+  id: string;
+  titleKey: MessageKey;
+  institutionKey: MessageKey;
+  dateRangeKey: MessageKey;
+  tags: SKILLS_NAMES[];
+};
+
+const DEGREE_ITEMS: DegreeItem[] = [
+  {
+    id: "post-grad",
+    titleKey: "degree.postGrad.title",
+    institutionKey: "degree.postGrad.institution",
+    dateRangeKey: "degree.postGrad.dateRange",
+    tags: [
+      "AWS",
+      "CI/CD",
+      "Docker",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Drizzle ORM",
+      "Figma",
+      "Fastify",
+      "TailwindCSS",
+      "Vite.js",
+      "Node",
+      "Shadcn UI"
+    ]
+  },
+  {
+    id: "engineering",
+    titleKey: "degree.engineering.title",
+    institutionKey: "degree.engineering.institution",
+    dateRangeKey: "degree.engineering.dateRange",
+    tags: ["HTML/CSS", "Javascript", "MySQL", "PHP"]
+  }
+];
+
+function resolveSkillQuery(tag: SKILLS_NAMES): SKILLS_QUERIES {
+  return SKILLS_MAP.find((skill) => skill.name === tag)?.query as SKILLS_QUERIES;
+}
 
 export function CurriculumDegree() {
   const t = useTranslation();
-  const [skills, setSkills] = useQueryState(
-    "skills",
-    parseAsArrayOf(parseAsString).withDefault(["react", "nextjs", "typescript"])
-  );
+  const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault(DEFAULT_SKILLS));
 
-  function handleSkillToggle(newSkills: string[]) {
-    setSkills(() => newSkills);
+  function handleSkillToggle(skillQuery: SKILLS_QUERIES) {
+    setSkills((currentSkills) => {
+      const selectedSkills = currentSkills ?? DEFAULT_SKILLS;
+
+      if (selectedSkills.includes(skillQuery)) {
+        return selectedSkills.filter((skill) => skill !== skillQuery);
+      }
+
+      return [...selectedSkills, skillQuery];
+    });
   }
 
   return (
-    <div>
-      <ol className="flex flex-col gap-4 lg:gap-6">
-        <li className="flex flex-col gap-2 lg:gap-3">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex flex-col gap-0.5 lg:gap-1">
-              <p>{t("degree.postGrad.title")}</p>
-              <p className="text-muted-foreground text-xs leading-tight">{t("degree.postGrad.institution")}</p>
+    <Accordion className="overflow-hidden rounded-3xl border-border bg-card" multiple>
+      {DEGREE_ITEMS.map((degree) => (
+        <AccordionItem
+          className="border-border bg-transparent data-open:bg-transparent"
+          key={degree.id}
+          value={degree.id}
+        >
+          <AccordionTrigger className="gap-4 p-3 sm:p-4">
+            <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+              <div className="flex min-w-0 flex-col gap-0.5 text-left">
+                <span className="font-semibold text-foreground text-sm leading-snug sm:text-base">
+                  {t(degree.titleKey)}
+                </span>
+                <span className="text-muted-foreground text-xs leading-tight">{t(degree.institutionKey)}</span>
+              </div>
+
+              <span className="shrink-0 self-start rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">
+                {t(degree.dateRangeKey)}
+              </span>
             </div>
+          </AccordionTrigger>
 
-            <span className="shrink-0 self-start rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">
-              {t("degree.postGrad.dateStart")} <strong className="text-green-600">{t("common.today")}</strong>
-            </span>
-          </div>
+          <AccordionContent className="p-3 sm:p-4">
+            <ul className="flex flex-wrap gap-1.5 sm:gap-2">
+              {degree.tags.map((tag) => {
+                const skillQuery = resolveSkillQuery(tag);
+                const isSelected = skills.includes(skillQuery);
 
-          <ToggleGroup
-            className="flex-wrap"
-            multiple
-            onValueChange={handleSkillToggle}
-            size="sm"
-            spacing={2}
-            value={skills}
-            variant="outline"
-          >
-            {(
-              [
-                "AWS",
-                "CI/CD",
-                "Docker",
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Drizzle ORM",
-                "Figma",
-                "Fastify",
-                "TailwindCSS",
-                "Vite.js",
-                "Node",
-                "Shadcn UI"
-              ] as SKILLS_NAMES[]
-            ).map((tag) => (
-              <ToggleGroupItem
-                aria-label={`Toggle ${tag}`}
-                className="cursor-pointer"
-                key={tag}
-                value={SKILLS_MAP.find((skill) => skill.name === tag)?.query as SKILLS_QUERIES}
-              >
-                {tag}
-              </ToggleGroupItem>
-            ))}
-          </ToggleGroup>
-        </li>
-
-        <li className="flex flex-col gap-2 lg:gap-3">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex flex-col gap-0.5 lg:gap-1">
-              <p>{t("degree.engineering.title")}</p>
-              <p className="text-muted-foreground text-xs leading-tight">{t("degree.engineering.institution")}</p>
-            </div>
-
-            <span className="shrink-0 self-start rounded-md bg-muted/30 px-2 py-1 text-muted-foreground text-xs">
-              {t("degree.engineering.dateRange")}
-            </span>
-          </div>
-
-          <ToggleGroup
-            multiple
-            onValueChange={handleSkillToggle}
-            size="sm"
-            spacing={2}
-            value={skills}
-            variant="outline"
-          >
-            {(["HTML/CSS", "Javascript", "MySQL", "PHP"] as SKILLS_NAMES[]).map((tag) => (
-              <ToggleGroupItem
-                aria-label={`Toggle ${tag}`}
-                className="cursor-pointer"
-                key={tag}
-                value={SKILLS_MAP.find((skill) => skill.name === tag)?.query as SKILLS_QUERIES}
-              >
-                {tag}
-              </ToggleGroupItem>
-            ))}
-          </ToggleGroup>
-        </li>
-      </ol>
-    </div>
+                return (
+                  <li key={tag}>
+                    <button
+                      aria-label={`Toggle ${tag}`}
+                      aria-pressed={isSelected}
+                      className={cn(
+                        "cursor-pointer rounded-lg border px-2.5 py-1 text-xs transition-[color,border-color,background-color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 sm:text-[0.8125rem]",
+                        isSelected
+                          ? "border-primary/50 bg-primary/10 text-foreground"
+                          : "border-border bg-transparent text-muted-foreground hover:border-primary/40 hover:text-primary"
+                      )}
+                      onClick={() => handleSkillToggle(skillQuery)}
+                      type="button"
+                    >
+                      {tag}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
   );
 }
