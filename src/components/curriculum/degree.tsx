@@ -74,7 +74,7 @@ export function CurriculumDegree() {
           key={degree.id}
           value={degree.id}
         >
-          <AccordionTrigger className="gap-4 p-3 hover:no-underline sm:p-4">
+          <AccordionTrigger className="gap-4 p-3 sm:p-4">
             <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
               <div className="flex min-w-0 flex-col gap-0.5 text-left">
                 <span className="font-semibold text-foreground text-sm leading-snug sm:text-base">

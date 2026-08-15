@@ -9,7 +9,7 @@ export function About() {
 
   return (
     <section className="flex flex-col gap-3 sm:gap-4" id="about">
-      <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("about.title")}</h2>
+      <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("nav.about")}</h2>
 
       <div className="rounded-3xl border border-border bg-card p-5 sm:p-6">
         <ul className="flex flex-col gap-4 text-muted-foreground text-sm leading-relaxed sm:text-[0.9375rem]">

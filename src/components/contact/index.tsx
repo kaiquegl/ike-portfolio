@@ -70,7 +70,7 @@ export function Contact() {
 
   return (
     <section className="flex flex-col gap-2 sm:gap-4" id="contact">
-      <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("contact.title")}</h2>
+      <h2 className="font-bold text-foreground text-lg sm:text-xl">{t("nav.contact")}</h2>
 
       <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:grid-cols-4">
         <ContactCard

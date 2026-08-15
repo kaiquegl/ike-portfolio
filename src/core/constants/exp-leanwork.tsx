@@ -5,10 +5,11 @@ import type { Locale } from "@/core/providers/locale/locale-factory";
 const EXP_LEANWORK_PT_BR: ExpType[] = [
   {
     id: "leanwork-wake",
-    title:
-      "Tech Lead Frontend | <a href='https://wake.tech/wake-commerce/' target='_blank' rel='noopener noreferrer'>Wake Commerce</a>",
-    period: "Set 2025 - Presente",
-
+    companyName: "Wake Commerce",
+    companyUrl: "https://wake.tech/wake-commerce/",
+    viaLeanwork: true,
+    period: "Set 2025 ~ Presente",
+    current: true,
     bulletPoints: [
       "Liderança na implementação de integrações de terceiros (Serasa, Hero Seguros, Tuna Pagamentos) na plataforma Wake Commerce, focando em arquitetura segura e escalável  (preparação para Go-Live)."
     ],
@@ -16,9 +17,10 @@ const EXP_LEANWORK_PT_BR: ExpType[] = [
   },
   {
     id: "leanwork-sinerlog",
-    title:
-      "Tech Lead Frontend | <a href='https://sinerlog.global/' target='_blank' rel='noopener noreferrer'>Sinerlog</a>",
-    period: "Jan 2025 - Ago 2025",
+    companyName: "Sinerlog",
+    companyUrl: "https://sinerlog.global/",
+    viaLeanwork: true,
+    period: "Jan 2025 ~ Ago 2025",
     bulletPoints: [
       <p key="sinerlog-team-lead">
         Liderança de Equipe: Gerenciamento de desenvolvedores frontend na entrega simultânea de 4 painéis
@@ -39,9 +41,10 @@ const EXP_LEANWORK_PT_BR: ExpType[] = [
   },
   {
     id: "leanwork-farmacias",
-    title:
-      "Senior Frontend Engineer | <a href='https://farmaciasapp.com.br/' target='_blank' rel='noopener noreferrer'>FarmaciasApp (Grupo SC)</a>",
-    period: "Jan 2023 - Dez 2024",
+    companyName: "FarmaciasApp (Grupo SC)",
+    companyUrl: "https://farmaciasapp.com.br/",
+    viaLeanwork: true,
+    period: "Jan 2023 ~ Dez 2024",
     bulletPoints: [
       <p key="fapp-greenfield-development">
         Desenvolvimento greenfield do marketplace (<HighlightSkill value="react">React</HighlightSkill>,{" "}
@@ -63,9 +66,10 @@ const EXP_LEANWORK_PT_BR: ExpType[] = [
   },
   {
     id: "leanwork-riachuelo",
-    title:
-      "Pleno Frontend Engineer | <a href='https://riachuelo.com.br/' target='_blank' rel='noopener noreferrer'>Riachuelo (Fanlab & Carter's)</a>",
-    period: "Jan 2021 - Dez 2022",
+    companyName: "Riachuelo (Fanlab & Carter's)",
+    companyUrl: "https://riachuelo.com.br/",
+    viaLeanwork: true,
+    period: "Jan 2021 ~ Dez 2022",
     bulletPoints: [
       <p key="riachuelo">
         Atuação nas frentes digitais da Fanlab e Carter's, focando na performance de carregamento e componentização.
@@ -74,10 +78,11 @@ const EXP_LEANWORK_PT_BR: ExpType[] = [
     tags: ["React", "Next.js", "TypeScript", "AdobeXD", "Javascript"]
   },
   {
-    id: "leanwork-riachuelo-centauro",
-    title:
-      "Pleno Frontend Engineer | <a href='https://centauro.com.br/' target='_blank' rel='noopener noreferrer'>Centauro</a>",
-    period: "Jan 2019 - Dez 2020",
+    id: "leanwork-centauro",
+    companyName: "Centauro",
+    companyUrl: "https://centauro.com.br/",
+    viaLeanwork: true,
+    period: "Jan 2019 ~ Dez 2020",
     bulletPoints: [
       <p key="centauro">
         Desenvolvimento de aplicações touch (<HighlightSkill value="react">React</HighlightSkill>) para personalização
@@ -88,9 +93,9 @@ const EXP_LEANWORK_PT_BR: ExpType[] = [
   },
   {
     id: "leanwork-inicio",
-    title:
-      "Junior Frontend Engineer | <a href='https://leanwork.com.br/' target='_blank' rel='noopener noreferrer'>Leanwork</a>",
-    period: "Jul 2018 - Dez 2018",
+    companyName: "Leanwork",
+    companyUrl: "https://leanwork.com.br/",
+    period: "Jul 2018 ~ Dez 2018",
     bulletPoints: [
       <p key="legacy-ecommerces">
         Estilização pixel-perfect (<HighlightSkill value="html/css">HTML/CSS</HighlightSkill>,{" "}
@@ -110,10 +115,11 @@ const EXP_LEANWORK_PT_BR: ExpType[] = [
 const EXP_LEANWORK_EN: ExpType[] = [
   {
     id: "leanwork-wake",
-    title:
-      "Tech Lead Frontend | <a href='https://wake.tech/wake-commerce/' target='_blank' rel='noopener noreferrer'>Wake Commerce</a>",
-    period: "Sep 2025 - Present",
-
+    companyName: "Wake Commerce",
+    companyUrl: "https://wake.tech/wake-commerce/",
+    viaLeanwork: true,
+    period: "Sep 2025 ~ Present",
+    current: true,
     bulletPoints: [
       "Led the implementation of third-party integrations (Serasa, Hero Seguros, Tuna Pagamentos) on the Wake Commerce platform, focusing on secure and scalable architecture (Go-Live preparation)."
     ],
@@ -121,9 +127,10 @@ const EXP_LEANWORK_EN: ExpType[] = [
   },
   {
     id: "leanwork-sinerlog",
-    title:
-      "Tech Lead Frontend | <a href='https://sinerlog.global/' target='_blank' rel='noopener noreferrer'>Sinerlog</a>",
-    period: "Jan 2025 - Aug 2025",
+    companyName: "Sinerlog",
+    companyUrl: "https://sinerlog.global/",
+    viaLeanwork: true,
+    period: "Jan 2025 ~ Aug 2025",
     bulletPoints: [
       <p key="sinerlog-team-lead">
         Team Leadership: Managed frontend developers in the simultaneous delivery of 4 admin panels and 1 multi-tenant
@@ -144,9 +151,10 @@ const EXP_LEANWORK_EN: ExpType[] = [
   },
   {
     id: "leanwork-farmacias",
-    title:
-      "Senior Frontend Engineer | <a href='https://farmaciasapp.com.br/' target='_blank' rel='noopener noreferrer'>FarmaciasApp (Grupo SC)</a>",
-    period: "Jan 2023 - Dec 2024",
+    companyName: "FarmaciasApp (Grupo SC)",
+    companyUrl: "https://farmaciasapp.com.br/",
+    viaLeanwork: true,
+    period: "Jan 2023 ~ Dec 2024",
     bulletPoints: [
       <p key="fapp-greenfield-development">
         Greenfield development of the marketplace (<HighlightSkill value="react">React</HighlightSkill>,{" "}
@@ -168,9 +176,10 @@ const EXP_LEANWORK_EN: ExpType[] = [
   },
   {
     id: "leanwork-riachuelo",
-    title:
-      "Mid Frontend Engineer | <a href='https://riachuelo.com.br/' target='_blank' rel='noopener noreferrer'>Riachuelo (Fanlab & Carter's)</a>",
-    period: "Jan 2021 - Dec 2022",
+    companyName: "Riachuelo (Fanlab & Carter's)",
+    companyUrl: "https://riachuelo.com.br/",
+    viaLeanwork: true,
+    period: "Jan 2021 ~ Dec 2022",
     bulletPoints: [
       <p key="riachuelo">
         Worked on the Fanlab and Carter's digital fronts, focusing on loading performance and componentization.
@@ -179,10 +188,11 @@ const EXP_LEANWORK_EN: ExpType[] = [
     tags: ["React", "Next.js", "TypeScript", "AdobeXD", "Javascript"]
   },
   {
-    id: "leanwork-riachuelo-centauro",
-    title:
-      "Mid Frontend Engineer | <a href='https://centauro.com.br/' target='_blank' rel='noopener noreferrer'>Centauro</a>",
-    period: "Jan 2019 - Dec 2020",
+    id: "leanwork-centauro",
+    companyName: "Centauro",
+    companyUrl: "https://centauro.com.br/",
+    viaLeanwork: true,
+    period: "Jan 2019 ~ Dec 2020",
     bulletPoints: [
       <p key="centauro">
         Development of touch applications (<HighlightSkill value="react">React</HighlightSkill>) for product
@@ -193,9 +203,9 @@ const EXP_LEANWORK_EN: ExpType[] = [
   },
   {
     id: "leanwork-inicio",
-    title:
-      "Junior Frontend Engineer | <a href='https://leanwork.com.br/' target='_blank' rel='noopener noreferrer'>Leanwork</a>",
-    period: "Jul 2018 - Dec 2018",
+    companyName: "Leanwork",
+    companyUrl: "https://leanwork.com.br/",
+    period: "Jul 2018 ~ Dec 2018",
     bulletPoints: [
       <p key="legacy-ecommerces">
         Pixel-perfect styling (<HighlightSkill value="html/css">HTML/CSS</HighlightSkill>,{" "}
