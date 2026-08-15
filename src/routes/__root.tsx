@@ -74,6 +74,28 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <div className="relative min-h-screen w-full">
+          {/* <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `
+              radial-gradient(circle at 50% 0%, rgba(142 ,81, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%,rgba(168, 85, 247, 0.1) 0%, transparent 100%),
+              radial-gradient(circle at 50% 100%, rgba(142 ,81, 255, 0.1) 0%, transparent 50%)
+            `
+            }}
+          /> */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `
+              radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 30%),
+              radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.1) 0%, transparent 30%),
+              radial-gradient(circle at 50% 50%,  rgba(168, 85, 247, 0.04) 0%, transparent 100%),
+              radial-gradient(circle at 0% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 30%),
+              radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 30%)
+            `
+            }}
+          />
           <div
             aria-hidden
             className="pointer-events-none fixed inset-0 z-0"
@@ -83,20 +105,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)
               `,
               backgroundSize: "24px 24px"
-            }}
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none fixed inset-0 z-0"
-            style={{
-              background: `
-                radial-gradient(
-                  circle at 50% 0%,
-                  rgba(168, 85, 247, 0.1) 0%,
-                  rgba(168, 85, 247, 0.04) 25%,
-                  rgba(0, 0, 0, 0) 55%
-                )
-              `
             }}
           />
 
