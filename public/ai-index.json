@@ -1,0 +1,147 @@
+{
+  "version": "1.0",
+  "generated": "2026-08-15",
+  "site": {
+    "title": "Kaique Lima",
+    "description": "Senior Frontend Engineer with 9+ years of experience. Building e-commerce and admin panels with React, TypeScript, and Next.js.",
+    "url": "https://ike-dev.com.br",
+    "locales": {
+      "pt-BR": "https://ike-dev.com.br/",
+      "en": "https://ike-dev.com.br/en"
+    }
+  },
+  "person": {
+    "name": "Kaique de Godoi Lima",
+    "shortName": "Kaique Lima",
+    "title": "Senior Frontend Engineer",
+    "yearsOfExperience": "9+",
+    "location": "Londrina, Paraná, Brazil",
+    "email": "kaikegl@proton.me",
+    "handle": "@kaiquegl",
+    "languages": ["Portuguese", "English"],
+    "employer": "Leanwork Group",
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite.js",
+      "TailwindCSS",
+      "Shadcn UI",
+      "Node.js",
+      "Docker",
+      "CI/CD",
+      "AWS",
+      "SEO",
+      "Figma"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Wake Commerce",
+      "via": "Leanwork",
+      "role": "Tech Lead Frontend",
+      "period": "Sep 2025 - Present",
+      "current": true,
+      "url": "https://wake.tech/wake-commerce/",
+      "highlight": "Third-party integrations (Serasa, Hero Seguros, Tuna Pagamentos); Go-Live preparation",
+      "tech": ["Javascript", "HTML/CSS", "TailwindCSS"]
+    },
+    {
+      "company": "Sinerlog",
+      "via": "Leanwork",
+      "role": "Tech Lead Frontend",
+      "period": "Jan 2025 - Aug 2025",
+      "url": "https://sinerlog.global/",
+      "highlight": "4 admin panels + 1 multi-tenant e-commerce; proprietary UI Registry; CI/CD with Docker",
+      "tech": [
+        "React",
+        "Next.js",
+        "Vite.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Docker",
+        "CI/CD"
+      ]
+    },
+    {
+      "company": "FarmaciasApp (Grupo SC)",
+      "via": "Leanwork",
+      "role": "Senior Frontend Engineer",
+      "period": "Jan 2023 - Dec 2024",
+      "url": "https://farmaciasapp.com.br/",
+      "highlight": "Greenfield pharmacy marketplace; 15,000+ stores; +300% monthly sales in year one",
+      "metrics": {
+        "stores": "15,000+",
+        "monthlySalesGrowth": "+300%"
+      },
+      "tech": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "SEO"
+      ]
+    },
+    {
+      "company": "Riachuelo (Fanlab & Carter's)",
+      "via": "Leanwork",
+      "role": "Pleno Frontend Engineer",
+      "period": "Jan 2021 - Dec 2022",
+      "url": "https://riachuelo.com.br/",
+      "highlight": "Fanlab and Carter's digital fronts; performance and componentization",
+      "tech": ["React", "Next.js", "TypeScript"]
+    },
+    {
+      "company": "Centauro",
+      "via": "Leanwork",
+      "role": "Pleno Frontend Engineer",
+      "period": "Jan 2019 - Dec 2020",
+      "url": "https://centauro.com.br/",
+      "highlight": "In-store React touch apps for print-on-demand; high-traffic e-commerce support",
+      "tech": ["React", "Javascript"]
+    },
+    {
+      "company": "Leanwork",
+      "role": "Junior Frontend Engineer",
+      "period": "Jul 2018 - Dec 2018",
+      "url": "https://leanwork.com.br/",
+      "highlight": "Legacy e-commerce styling/maintenance; Angular educational platform",
+      "tech": ["HTML/CSS", "Javascript", "jQuery", "Angular"]
+    },
+    {
+      "company": "Elitesoft",
+      "role": "Junior Fullstack Developer & Support",
+      "period": "Jan 2017 - Jun 2018",
+      "url": "https://www.elitesoft.com.br/",
+      "highlight": "ISP ERP systems; PHP and Angular; support process automation",
+      "tech": ["PHP", "Angular", "MySQL", "HTML/CSS"]
+    }
+  ],
+  "education": [
+    {
+      "title": "Full-Stack 360° Post-Graduate with Artificial Intelligence",
+      "institution": "Rocketseat",
+      "period": "Jan 2025 - Jun 2026"
+    },
+    {
+      "title": "Computer Engineering",
+      "institution": "UNOPAR - Universidade Norte do Paraná",
+      "period": "Jan 2013 - Dec 2017"
+    }
+  ],
+  "social": {
+    "github": "https://github.com/kaiquegl",
+    "linkedin": "https://www.linkedin.com/in/kaique-gl",
+    "email": "kaikegl@proton.me",
+    "website": "https://ike-dev.com.br"
+  },
+  "resources": {
+    "llmsTxt": "https://ike-dev.com.br/llms.txt",
+    "llmsFullTxt": "https://ike-dev.com.br/llms-full.txt",
+    "sitemap": "https://ike-dev.com.br/sitemap.xml",
+    "resumePtBr": "https://ike-dev.com.br/assets/kaique-lima-resume-ptbr.pdf",
+    "resumeEn": "https://ike-dev.com.br/assets/kaique-lima-resume-en.pdf"
+  }
+}

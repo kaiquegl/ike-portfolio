@@ -1,5 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://ike-dev.com.br/sitemap.xml
+
+# LLM-oriented resources (not robots directives)
+# https://ike-dev.com.br/llms.txt
+# https://ike-dev.com.br/llms-full.txt
+# https://ike-dev.com.br/ai-index.json

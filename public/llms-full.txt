@@ -1,0 +1,110 @@
+# Kaique Lima - Complete Profile
+
+URL: https://ike-dev.com.br
+
+---
+
+## About
+
+Kaique Lima (Kaique de Godoi Lima) is a Senior Frontend Engineer with 9+ years of experience (programming since 2017, full focus on frontend since 2018). He specializes in scalable architectures for high-performance e-commerce and admin panels using React, Next.js, and TypeScript.
+
+He has been embedded in large Brazilian brands as an outsourced engineer through Leanwork: Centauro, Riachuelo, FarmaciasApp (Grupo SC), Sinerlog, and Wake Commerce. Focus areas: performance, security, usability, and SEO.
+
+Highlight: greenfield frontend for one of Brazil's largest pharmacy marketplaces — 15,000+ stores integrated and a 300% increase in monthly sales in the first year of operation.
+
+## Contact Information
+
+- Full Name: Kaique de Godoi Lima
+- Email: kaikegl@proton.me
+- Location: Londrina, Paraná, Brazil
+- Languages: Portuguese (native), English (advanced)
+- Website: https://ike-dev.com.br
+- GitHub: https://github.com/kaiquegl
+- LinkedIn: https://www.linkedin.com/in/kaique-gl
+- Resume (PT-BR): https://ike-dev.com.br/assets/kaique-lima-resume-ptbr.pdf
+- Resume (EN): https://ike-dev.com.br/assets/kaique-lima-resume-en.pdf
+
+---
+
+## Professional Experience
+
+Kaique has had two formal employers: Elitesoft (2017–2018) and Leanwork (2018–present). At Leanwork he is allocated as a consultant to different brands; each role below is a distinct allocation within the same company.
+
+### Wake Commerce (via Leanwork) — Tech Lead Frontend
+- Period: Sep 2025 – Present
+- URL: https://wake.tech/wake-commerce/
+- Highlights:
+  - Led third-party integrations (Serasa, Hero Seguros, Tuna Pagamentos) on the Wake Commerce platform
+  - Focus on secure, scalable architecture (Go-Live preparation)
+- Tech: JavaScript, HTML/CSS, TailwindCSS
+
+### Sinerlog (via Leanwork) — Tech Lead Frontend
+- Period: Jan 2025 – Aug 2025
+- URL: https://sinerlog.global/
+- Highlights:
+  - Led frontend developers delivering 4 admin panels and 1 multi-tenant e-commerce simultaneously
+  - Created a proprietary UI Registry based on shadcn/ui architecture, standardizing components across the company
+  - Restructured CI/CD pipelines for multiple environments (HML/PRD) with Docker
+- Tech: React, Next.js, Vite.js, TypeScript, TailwindCSS, Shadcn UI, Figma, CI/CD, Docker
+
+### FarmaciasApp – Grupo SC (via Leanwork) — Senior Frontend Engineer
+- Period: Jan 2023 – Dec 2024
+- URL: https://farmaciasapp.com.br/
+- Highlights:
+  - Greenfield marketplace frontend with React, Next.js, TypeScript, TailwindCSS, Shadcn UI
+  - Integrated a catalog of 15,000+ stores
+  - Aggressive Core Web Vitals and SEO work; contributed to a 300% increase in monthly sales in year one
+  - SSR/ISR with Next.js for indexing thousands of product pages
+- Tech: React, Next.js, TypeScript, TailwindCSS, AdobeXD, CI/CD, Shadcn UI, SEO
+
+### Riachuelo – Fanlab & Carter's (via Leanwork) — Pleno Frontend Engineer
+- Period: Jan 2021 – Dec 2022
+- URL: https://riachuelo.com.br/
+- Highlights:
+  - Digital fronts for Fanlab and Carter's within the Riachuelo ecosystem
+  - Loading performance and modular componentization
+- Tech: React, Next.js, TypeScript, AdobeXD, JavaScript
+
+### Centauro (via Leanwork) — Pleno Frontend Engineer
+- Period: Jan 2019 – Dec 2020
+- URL: https://centauro.com.br/
+- Highlights:
+  - Touch-screen React apps for in-store product customization (print on demand / omnichannel)
+  - Sustained high-traffic e-commerce
+- Tech: React, AdobeXD, JavaScript
+
+### Leanwork — Junior Frontend Engineer
+- Period: Jul 2018 – Dec 2018
+- URL: https://leanwork.com.br/
+- Highlights:
+  - Pixel-perfect styling and maintenance of legacy e-commerces (HTML/CSS, JavaScript, jQuery, Photoshop)
+  - Educational platform in Angular (courses, exams, students)
+- Tech: HTML/CSS, JavaScript, jQuery, Photoshop, Angular
+
+### Elitesoft Informática — Junior Fullstack Developer & Support
+- Period: Jan 2017 – Jun 2018
+- URL: https://www.elitesoft.com.br/
+- Highlights:
+  - ERP systems for ISPs: PHP, Angular, MySQL
+  - Development and maintenance plus process automation that reduced support operational load
+- Tech: PHP, Angular, MySQL, HTML/CSS
+
+---
+
+## Skills
+
+- Frontend: React, Next.js, TypeScript, Vite.js, TailwindCSS, Shadcn UI, Angular, jQuery, HTML/CSS, JavaScript, SEO
+- Backend: Node.js, Fastify, Drizzle ORM, PostgreSQL, PHP, MySQL
+- DevOps: Docker, CI/CD, AWS
+- Design: Figma, AdobeXD, Photoshop
+
+## Education
+
+- Full-Stack 360° Post-Graduate with Artificial Intelligence — Rocketseat — Jan 2025 ~ Jun 2026
+- Computer Engineering (Bachelor's) — UNOPAR - Universidade Norte do Paraná — Jan 2013 ~ Dec 2017
+
+---
+
+For a curated link map: https://ike-dev.com.br/llms.txt
+For structured data: https://ike-dev.com.br/ai-index.json
+For HTML pages: https://ike-dev.com.br/ (pt-BR) and https://ike-dev.com.br/en (en)

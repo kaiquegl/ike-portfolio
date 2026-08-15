@@ -53,6 +53,8 @@ export function buildSeoHead({ locale, path }: BuildSeoHeadOptions) {
     links: [
       { rel: "canonical", href: canonicalUrl },
       { rel: "manifest", href: "/manifest.json" },
+      { rel: "describedby", href: `${SITE_URL}/llms.txt` },
+      { rel: "alternate", type: "text/markdown", href: `${SITE_URL}/llms-full.txt` },
       { rel: "alternate", hrefLang: "pt-BR", href: `${SITE_URL}/` },
       { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/en` },
       { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/` }
@@ -67,6 +69,7 @@ export function buildPersonJsonLd() {
     name: "Kaique de Godoi Lima",
     jobTitle: "Senior Frontend Engineer",
     url: SITE_URL,
+    email: "kaikegl@proton.me",
     image: `${SITE_URL}/assets/kaique-lima-foto.webp`,
     sameAs: ["https://github.com/kaiquegl", "https://www.linkedin.com/in/kaique-gl"],
     address: {
@@ -75,6 +78,22 @@ export function buildPersonJsonLd() {
       addressRegion: "PR",
       addressCountry: "BR"
     },
+    worksFor: {
+      "@type": "Organization",
+      name: "Leanwork Group",
+      url: "https://leanwork.com.br/"
+    },
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite.js",
+      "TailwindCSS",
+      "Shadcn UI",
+      "SEO",
+      "E-commerce",
+      "Frontend Architecture"
+    ],
     knowsLanguage: ["pt-BR", "en"],
     alumniOf: {
       "@type": "EducationalOrganization",

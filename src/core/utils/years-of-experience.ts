@@ -1,5 +1,5 @@
 /** Year Kaique started focusing full-time on frontend (Leanwork, Jul 2018). */
-export const FRONTEND_START_YEAR = 2018;
+export const FRONTEND_START_YEAR = 2017;
 
 /**
  * Years of frontend experience from {@link FRONTEND_START_YEAR} to the given date.
