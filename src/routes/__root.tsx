@@ -7,23 +7,18 @@ import { Toaster } from "@/components/ui/sonner";
 import { LocaleContext } from "@/core/providers/locale/locale-context";
 import type { Locale } from "@/core/providers/locale/locale-factory";
 import { createLocaleStore } from "@/core/providers/locale/locale-factory";
-import { getThemeSSR } from "@/core/providers/theme/theme-server-functions";
-import { ThemeContext } from "@/core/providers/theme/theme-context";
-import { createThemeStore } from "@/core/providers/theme/theme-factory";
 import { buildSeoHead } from "@/core/seo/site-metadata";
 import appCss from "../styles.css?url";
 
 type RootRouteContext = {
   locale: Locale;
-  theme: "dark" | "light";
 };
 
 export const Route = createRootRoute({
-  beforeLoad: async ({ location }: { location: { pathname: string } }) => {
+  beforeLoad: ({ location }: { location: { pathname: string } }) => {
     const isEnglishPath = location.pathname === "/en" || location.pathname.startsWith("/en/");
     const locale: Locale = isEnglishPath ? "en" : "pt-BR";
-    const theme = await getThemeSSR();
-    return { theme, locale };
+    return { locale };
   },
   head: (opts) => {
     const locale = (opts as unknown as { context?: RootRouteContext }).context?.locale ?? "pt-BR";
@@ -43,8 +38,7 @@ export const Route = createRootRoute({
 const GOOGLE_TAG_MANAGER_ID = "G-SH541SEFFZ";
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  const { theme, locale } = Route.useRouteContext();
-  const [themeStore] = useState(() => createThemeStore({ theme }));
+  const { locale } = Route.useRouteContext();
   const [localeStore] = useState(() => createLocaleStore({ locale }));
 
   useEffect(() => {
@@ -53,7 +47,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   }, [locale, localeStore]);
 
   return (
-    <html className={theme} lang={locale}>
+    <html className="dark" lang={locale}>
       <head>
         <HeadContent />
         <link href="/assets/ike-favicon-32x32.png" rel="icon" sizes="32x32" />
@@ -74,76 +68,37 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <div className="relative min-h-screen w-full">
-          {/* LIGHT MODE BACKGROUND */}
           <div
-            className="fixed inset-0 z-0 dark:hidden"
+            aria-hidden
+            className="pointer-events-none fixed inset-0 z-0"
             style={{
               backgroundImage: `
-        linear-gradient(to right, #e7e5e4 1px, transparent 1px),
-        linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)
-      `,
-              backgroundSize: "20px 20px",
-              backgroundPosition: "0 0, 0 0",
-              maskImage: `
-          repeating-linear-gradient(
-              to right,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            repeating-linear-gradient(
-              to bottom,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)
-      `,
-              WebkitMaskImage: `
-    repeating-linear-gradient(
-              to right,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            repeating-linear-gradient(
-              to bottom,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            radial-gradient(ellipse 80% 80% at 100% 0%, #000 50%, transparent 90%)
-      `,
-              maskComposite: "intersect",
-              WebkitMaskComposite: "source-in"
+                linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)
+              `,
+              backgroundSize: "24px 24px"
             }}
           />
-          {/* DARK MODE BACKGROUND */}
           <div
-            className="pointer-events-none fixed inset-0 z-0 hidden dark:block"
+            aria-hidden
+            className="pointer-events-none fixed inset-0 z-0"
             style={{
               background: `
                 radial-gradient(
-                  circle at center,
-                  rgba(168, 85, 247, 0.12) 0%,
-                  rgba(168, 85, 247, 0.06) 20%,
-                  rgba(0, 0, 0, 0.0) 60%
+                  circle at 50% 0%,
+                  rgba(168, 85, 247, 0.1) 0%,
+                  rgba(168, 85, 247, 0.04) 25%,
+                  rgba(0, 0, 0, 0) 55%
                 )
               `
             }}
           />
 
           <NuqsAdapter>
-            <ThemeContext.Provider value={themeStore}>
-              <LocaleContext.Provider value={localeStore}>
-                {children}
-                <Toaster position="bottom-right" />
-              </LocaleContext.Provider>
-            </ThemeContext.Provider>
+            <LocaleContext.Provider value={localeStore}>
+              {children}
+              <Toaster position="bottom-right" />
+            </LocaleContext.Provider>
           </NuqsAdapter>
         </div>
 

@@ -12,18 +12,18 @@ export function Curriculum() {
   const t = useTranslation();
 
   return (
-    <div className="flex flex-col gap-8 border-border lg:gap-10 lg:border-l lg:pl-6">
-      <div className="flex flex-col gap-3 lg:gap-6">
+    <div className="flex flex-col gap-8 lg:gap-10">
+      <section className="flex flex-col gap-3 lg:gap-6" id="skills">
         <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={SourceCodeIcon} size={24} /> {t("curriculum.technicalSkills")}
         </h2>
 
         <CurriculumSkills />
-      </div>
+      </section>
 
       <Separator />
 
-      <div className="flex flex-col gap-8 lg:gap-6">
+      <section className="flex flex-col gap-8 lg:gap-6" id="experience">
         <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={WorkHistoryIcon} size={24} />{" "}
           {t("curriculum.professionalExperience")}
@@ -32,17 +32,17 @@ export function Curriculum() {
         <CurriculumExperienceLeanwork />
 
         <CurriculumExperienceElitesoft />
-      </div>
+      </section>
 
       <Separator />
 
-      <div className="flex flex-col gap-3 lg:gap-6">
+      <section className="flex flex-col gap-3 lg:gap-6" id="education">
         <h2 className="inline-flex items-center gap-2 text-lg lg:text-xl">
           <HugeiconsIcon className="text-primary" icon={DiplomaIcon} size={24} /> {t("curriculum.education")}
         </h2>
 
         <CurriculumDegree />
-      </div>
+      </section>
     </div>
   );
 }
