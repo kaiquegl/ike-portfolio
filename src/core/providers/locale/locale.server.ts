@@ -59,7 +59,7 @@ export const getLocaleSSR = createServerFn({ method: "GET" })
 
 export const setLocaleSSR = createServerFn({ method: "POST" })
   .middleware([staticFunctionMiddleware] as any)
-  .inputValidator((data: { locale: LocaleProps["locale"] }) => data)
+  .validator((data: { locale: LocaleProps["locale"] }) => data)
   .handler(({ data }) => {
     setCookie("locale", data.locale);
     return data.locale;
