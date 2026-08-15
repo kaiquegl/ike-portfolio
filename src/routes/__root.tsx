@@ -4,6 +4,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
+import { getGaMeasurementId, shouldLoadAnalytics } from "@/core/analytics/gtag";
 import { LocaleContext } from "@/core/providers/locale/locale-context";
 import type { Locale } from "@/core/providers/locale/locale-factory";
 import { createLocaleStore } from "@/core/providers/locale/locale-factory";
@@ -35,7 +36,8 @@ export const Route = createRootRoute({
   shellComponent: RootDocument
 });
 
-const GOOGLE_TAG_MANAGER_ID = "G-SH541SEFFZ";
+const GA_MEASUREMENT_ID = getGaMeasurementId();
+const LOAD_ANALYTICS = shouldLoadAnalytics();
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const { locale } = Route.useRouteContext();
@@ -55,16 +57,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <link href="/assets/ike-favicon-512x512.png" rel="icon" sizes="512x512" />
         <link as="image" fetchPriority="high" href="/assets/kaique-lima-foto.webp" rel="preload" />
 
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_MANAGER_ID}`} />
-        <script>
-          {`
+        {LOAD_ANALYTICS ? (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+            <script>
+              {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', '${GOOGLE_TAG_MANAGER_ID}');
+            gtag('config', '${GA_MEASUREMENT_ID}');
           `}
-        </script>
+            </script>
+          </>
+        ) : null}
       </head>
       <body>
         <div className="relative min-h-screen w-full">

@@ -2,6 +2,7 @@ import { Download05Icon, Email, GithubIcon, Linkedin02Icon } from "@hugeicons/co
 import { HugeiconsIcon } from "@hugeicons/react";
 import type { ComponentProps } from "react";
 import { toast } from "sonner";
+import { trackEvent } from "@/core/analytics/gtag";
 import { useTranslation } from "@/core/i18n/use-translation";
 import { useLocale } from "@/core/providers/locale/locale-hook";
 
@@ -17,13 +18,20 @@ const CARD_CLASS =
 
 type HugeIcon = ComponentProps<typeof HugeiconsIcon>["icon"];
 
+type ContactMethod = "email" | "github" | "linkedin" | "resume";
+
 type ContactCardProps = {
+  contactMethod: ContactMethod;
   heading: string;
   icon: HugeIcon;
   label: string;
 } & ({ download?: boolean; href: string; onClick?: never } | { download?: never; href?: never; onClick: () => void });
 
-function ContactCard({ download, heading, href, icon, label, onClick }: ContactCardProps) {
+function ContactCard({ contactMethod, download, heading, href, icon, label, onClick }: ContactCardProps) {
+  function handleAnalyticsClick() {
+    trackEvent("contact_click", { contact_method: contactMethod });
+  }
+
   const content = (
     <>
       <HugeiconsIcon
@@ -43,6 +51,7 @@ function ContactCard({ download, heading, href, icon, label, onClick }: ContactC
         className={CARD_CLASS}
         download={download}
         href={href}
+        onClick={handleAnalyticsClick}
         rel={download ? undefined : "noopener noreferrer"}
         target={download ? undefined : "_blank"}
       >
@@ -51,8 +60,19 @@ function ContactCard({ download, heading, href, icon, label, onClick }: ContactC
     );
   }
 
+  if (!onClick) {
+    return null;
+  }
+
   return (
-    <button className={CARD_CLASS} onClick={onClick} type="button">
+    <button
+      className={CARD_CLASS}
+      onClick={() => {
+        handleAnalyticsClick();
+        onClick();
+      }}
+      type="button"
+    >
       {content}
     </button>
   );
@@ -74,24 +94,28 @@ export function Contact() {
 
       <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:grid-cols-4">
         <ContactCard
+          contactMethod="email"
           heading={t("contact.email.heading")}
           icon={Email}
           label={t("contact.email.label")}
           onClick={handleCopyEmail}
         />
         <ContactCard
+          contactMethod="github"
           heading={t("contact.github.heading")}
           href="https://github.com/kaiquegl"
           icon={GithubIcon}
           label={t("contact.github.label")}
         />
         <ContactCard
+          contactMethod="linkedin"
           heading={t("contact.linkedin.heading")}
           href="https://www.linkedin.com/in/kaique-gl"
           icon={Linkedin02Icon}
           label={t("contact.linkedin.label")}
         />
         <ContactCard
+          contactMethod="resume"
           download
           heading={t("contact.resume.heading")}
           href={resumeUrl}

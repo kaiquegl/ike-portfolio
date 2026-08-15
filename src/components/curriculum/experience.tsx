@@ -1,5 +1,7 @@
 import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
+import { useRef } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { trackEvent } from "@/core/analytics/gtag";
 import { getExpElitesoft } from "@/core/constants/exp-elitesoft";
 import { getExpLeanwork } from "@/core/constants/exp-leanwork";
 import type { ExpType } from "@/core/constants/exp-type";
@@ -18,10 +20,22 @@ function resolveSkillQuery(tag: SKILLS_NAMES): SKILLS_QUERIES {
 function ExperienceCompanyLine({ item }: { item: ExpType }) {
   const t = useTranslation();
 
+  function handleCompanyLinkClick() {
+    if (!item.companyUrl) {
+      return;
+    }
+
+    trackEvent("company_link_click", {
+      company: item.companyName,
+      url: item.companyUrl
+    });
+  }
+
   const clientLink = item.companyUrl ? (
     <a
       className="text-muted-foreground no-underline hover:text-primary"
       href={item.companyUrl}
+      onClick={handleCompanyLinkClick}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -38,10 +52,7 @@ function ExperienceCompanyLine({ item }: { item: ExpType }) {
   return (
     <span className="text-muted-foreground text-xs leading-tight">
       Leanwork
-      <span className="text-muted-foreground/80">
-        {" "}
-        • {t("exp.outsourcingAt")}{" "}
-      </span>
+      <span className="text-muted-foreground/80"> • {t("exp.outsourcingAt")} </span>
       {clientLink}
     </span>
   );
@@ -51,14 +62,45 @@ export function CurriculumExperience() {
   const t = useTranslation();
   const locale = useLocale((state) => state.locale);
   const [skills, setSkills] = useQueryState("skills", parseAsArrayOf(parseAsString).withDefault(DEFAULT_SKILLS));
+  const previousOpenExperienceIdsRef = useRef<string[]>(DEFAULT_OPEN_EXPERIENCE);
 
   const experienceItems = [...getExpLeanwork(locale), ...getExpElitesoft(locale)];
+
+  function handleExperienceValueChange(nextOpenExperienceIds: Array<string | null>) {
+    const openExperienceIds = nextOpenExperienceIds.filter(
+      (experienceId): experienceId is string => typeof experienceId === "string"
+    );
+    const newlyOpenedExperienceIds = openExperienceIds.filter(
+      (experienceId) => !previousOpenExperienceIdsRef.current.includes(experienceId)
+    );
+
+    for (const experienceId of newlyOpenedExperienceIds) {
+      const experienceItem = experienceItems.find((item) => item.id === experienceId);
+
+      if (!experienceItem) {
+        continue;
+      }
+
+      trackEvent("experience_expand", {
+        experience_id: experienceItem.id,
+        company: experienceItem.companyName
+      });
+    }
+
+    previousOpenExperienceIdsRef.current = openExperienceIds;
+  }
 
   function handleSkillToggle(skillQuery: SKILLS_QUERIES) {
     setSkills((currentSkills) => {
       const selectedSkills = currentSkills ?? DEFAULT_SKILLS;
+      const isAlreadySelected = selectedSkills.includes(skillQuery);
 
-      if (selectedSkills.includes(skillQuery)) {
+      trackEvent("skill_filter_toggle", {
+        skill: skillQuery,
+        action: isAlreadySelected ? "deselect" : "select"
+      });
+
+      if (isAlreadySelected) {
         return selectedSkills.filter((skill) => skill !== skillQuery);
       }
 
@@ -71,6 +113,7 @@ export function CurriculumExperience() {
       className="overflow-hidden rounded-3xl border-border bg-card"
       defaultValue={DEFAULT_OPEN_EXPERIENCE}
       multiple
+      onValueChange={handleExperienceValueChange}
     >
       {experienceItems.map((item) => (
         <AccordionItem className="border-border bg-transparent data-open:bg-transparent" key={item.id} value={item.id}>

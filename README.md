@@ -16,6 +16,18 @@ Live at: [ike-dev.com.br](https://ike-dev.com.br)
 - **Interactive skill highlights** – clicking a skill filters the professional experience timeline
 - **URL-synced state** – active skill filter is reflected in the query string via `nuqs`
 - **Accessible** – semantic HTML, keyboard-navigable components
+- **Analytics (GA4)** – page views in production only; custom events for experience expands, contact clicks, skill filters, and company links. Traffic source (Google / LinkedIn / GitHub) comes from referrer + optional UTMs when you share the site
+
+---
+
+## Analytics
+
+GA4 Measurement ID loads only outside `DEV` (`VITE_GA_MEASUREMENT_ID` overrides the default). When sharing the site from LinkedIn or GitHub, prefer UTM links:
+
+- `https://ike-dev.com.br/?utm_source=linkedin&utm_medium=social&utm_campaign=profile`
+- `https://ike-dev.com.br/?utm_source=github&utm_medium=social&utm_campaign=readme`
+
+Custom events in GA4 (**Reports → Engagement → Events**): `experience_expand`, `contact_click`, `skill_filter_toggle`, `company_link_click`.
 
 ---
 
