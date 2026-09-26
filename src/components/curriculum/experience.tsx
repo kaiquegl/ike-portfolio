@@ -11,7 +11,7 @@ import { useLocale } from "@/core/providers/locale/locale-hook";
 import { cn } from "@/lib/utils";
 
 const DEFAULT_SKILLS = ["react", "nextjs", "typescript"];
-const DEFAULT_OPEN_EXPERIENCE = ["leanwork-wake"];
+const DEFAULT_OPEN_EXPERIENCE = ["leanwork-rheon"];
 
 function resolveSkillQuery(tag: SKILLS_NAMES): SKILLS_QUERIES {
   return SKILLS_MAP.find((skill) => skill.name === tag)?.query as SKILLS_QUERIES;

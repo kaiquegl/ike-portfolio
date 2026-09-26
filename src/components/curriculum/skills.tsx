@@ -17,6 +17,7 @@ const LEFT_CATEGORIES: SkillCategory[] = [
 ];
 
 const RIGHT_CATEGORIES: SkillCategory[] = [
+  { labelKey: "skills.category.testing", section: "testing" },
   { labelKey: "skills.category.backend", section: "backend" },
   { labelKey: "skills.category.devops", section: "devops" }
 ];

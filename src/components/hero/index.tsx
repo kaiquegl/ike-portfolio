@@ -1,12 +1,9 @@
 import { Briefcase01Icon, Location01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { getYearsOfExperience, withYearsOfExperience } from "@/core/utils/years-of-experience";
 
 export function Hero() {
   const t = useTranslation();
-  const years = getYearsOfExperience();
-  const headline = withYearsOfExperience(t("hero.headline"), years);
 
   return (
     <section className="rounded-3xl border border-border bg-card p-2 shadow-sm sm:p-4" id="top">
@@ -26,7 +23,7 @@ export function Hero() {
             <h1 className="font-bold text-foreground text-xl tracking-tight sm:text-2xl">
               Kaique Lima<span className="text-primary">.</span>
             </h1>
-            <p className="text-muted-foreground text-sm sm:text-base">{headline}</p>
+            <p className="text-muted-foreground text-sm sm:text-base">{t("hero.headline")}</p>
             {/* <p className="text-muted-foreground/80 text-xs sm:text-sm">{t("hero.handle")}</p> */}
           </div>
 

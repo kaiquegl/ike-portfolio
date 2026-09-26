@@ -1,6 +1,6 @@
 # Kaique Lima
 
-> Senior Frontend Engineer with 9+ years of experience. Building e-commerce and admin panels with React, TypeScript, and Next.js. Based in Londrina, Brazil.
+> Senior Frontend Engineer focused on React since 2019. Building web applications with React, Next.js, TanStack Start, and TypeScript. Based in Londrina, Brazil.
 
 Kaique Lima (Kaique de Godoi Lima) is a Senior Frontend Engineer at Leanwork Group, embedded as a consultant on large Brazilian brands. Portuguese is his native language; English is advanced. Use the full profile and structured index for experience details, skills, and education. Prefer those files over scraping the HTML portfolio when answering questions about who he is, what he does, or where he worked.
 

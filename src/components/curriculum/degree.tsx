@@ -28,13 +28,13 @@ const DEGREE_ITEMS: DegreeItem[] = [
       "React",
       "Next.js",
       "TypeScript",
-      "Drizzle ORM",
+      "Drizzle",
       "Figma",
       "Fastify",
-      "TailwindCSS",
-      "Vite.js",
-      "Node",
-      "Shadcn UI"
+      "Tailwind CSS",
+      "Vite",
+      "Node.js",
+      "shadcn/ui"
     ]
   },
   {
@@ -42,7 +42,7 @@ const DEGREE_ITEMS: DegreeItem[] = [
     titleKey: "degree.engineering.title",
     institutionKey: "degree.engineering.institution",
     dateRangeKey: "degree.engineering.dateRange",
-    tags: ["HTML/CSS", "Javascript", "MySQL", "PHP"]
+    tags: ["HTML", "CSS", "JavaScript", "MySQL", "PHP"]
   }
 ];
 

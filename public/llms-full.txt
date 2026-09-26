@@ -6,11 +6,9 @@ URL: https://ike-dev.com.br
 
 ## About
 
-Kaique Lima (Kaique de Godoi Lima) is a Senior Frontend Engineer with 9+ years of experience (programming since 2017, full focus on frontend since 2018). He specializes in scalable architectures for high-performance e-commerce and admin panels using React, Next.js, and TypeScript.
+Kaique Lima (Kaique de Godoi Lima) is a Senior Frontend Engineer specializing in frontend development, with a focus on React since 2019 (7 years). He builds scalable and robust web applications with TypeScript and the React ecosystem, including Next.js (since 2022) and TanStack Start, across client-rendered, SSR, and ISR architectures.
 
-He has been embedded in large Brazilian brands as an outsourced engineer through Leanwork: Centauro, Riachuelo, FarmaciasApp (Grupo SC), Sinerlog, and Wake Commerce. Focus areas: performance, security, usability, and SEO.
-
-Highlight: greenfield frontend for one of Brazil's largest pharmacy marketplaces — 15,000+ stores integrated and a 300% increase in monthly sales in the first year of operation.
+Work covers design systems, Core Web Vitals, and the full delivery cycle: planning, architecture, implementation, testing, monitoring, and production support.
 
 ## Contact Information
 
@@ -28,80 +26,79 @@ Highlight: greenfield frontend for one of Brazil's largest pharmacy marketplaces
 
 ## Professional Experience
 
-Kaique has had two formal employers: Elitesoft (2017–2018) and Leanwork (2018–present). At Leanwork he is allocated as a consultant to different brands; each role below is a distinct allocation within the same company.
+Kaique has had two formal employers: Elitesoft Informática (2017–2018) and Leanwork (2018–present). At Leanwork he is allocated as a consultant to different clients; each role below is a distinct allocation within the same company.
 
-### Wake Commerce (via Leanwork) — Tech Lead Frontend
+### Rheon (via Leanwork) — Senior Frontend Engineer
 - Period: Sep 2025 – Present
-- URL: https://wake.tech/wake-commerce/
 - Highlights:
-  - Led third-party integrations (Serasa, Hero Seguros, Tuna Pagamentos) on the Wake Commerce platform
-  - Focus on secure, scalable architecture (Go-Live preparation)
-- Tech: JavaScript, HTML/CSS, TailwindCSS
+  - Cut Azure build time by 83% (from 6 minutes to 1 minute) by rebuilding the multi-tenant marketplace on TanStack Start. The Next.js app stayed live. Without Vercel, its Azure deploy was the slow part.
+  - Put the TanStack Start app under Vitest: 800+ tests, covering about 78% of the lines.
+  - Kept the legacy Next.js storefront and the new TanStack Start app in production together. Same multi-tenant marketplace. Used Cursor to implement changes and reviewed each one before merge, while pharmacies onboarded.
+- Tech: Azure, TanStack Start, Next.js, Vitest
 
 ### Sinerlog (via Leanwork) — Tech Lead Frontend
 - Period: Jan 2025 – Aug 2025
 - URL: https://sinerlog.global/
 - Highlights:
-  - Led frontend developers delivering 4 admin panels and 1 multi-tenant e-commerce simultaneously
-  - Created a proprietary UI Registry based on shadcn/ui architecture, standardizing components across the company
-  - Restructured CI/CD pipelines for multiple environments (HML/PRD) with Docker
-- Tech: React, Next.js, Vite.js, TypeScript, TailwindCSS, Shadcn UI, Figma, CI/CD, Docker
+  - Led a team of 3 frontend engineers in the simultaneous delivery of four admin applications and one multi-tenant e-commerce platform using React, Next.js, Vite, and TypeScript.
+  - Worked closely with the client through recurring alignment meetings, translating business requirements into technical scope, priorities, and frontend delivery plans.
+  - Designed a shared UI registry inspired by shadcn/ui, standardizing reusable components across applications and reducing duplicated implementations.
+  - Helped structure separate HML and production delivery pipelines so each environment could be deployed independently.
+- Tech: React, Next.js, Vite, TypeScript, shadcn/ui
 
-### FarmaciasApp – Grupo SC (via Leanwork) — Senior Frontend Engineer
+### FarmaciasApp (via Leanwork) — Senior Frontend Engineer
 - Period: Jan 2023 – Dec 2024
 - URL: https://farmaciasapp.com.br/
 - Highlights:
-  - Greenfield marketplace frontend with React, Next.js, TypeScript, TailwindCSS, Shadcn UI
-  - Integrated a catalog of 15,000+ stores
-  - Aggressive Core Web Vitals and SEO work; contributed to a 300% increase in monthly sales in year one
-  - SSR/ISR with Next.js for indexing thousands of product pages
-- Tech: React, Next.js, TypeScript, TailwindCSS, AdobeXD, CI/CD, Shadcn UI, SEO
+  - Improved catalog and product templates on a Next.js pharmacy marketplace by memoizing components, caching data, and serving images with next/image, then checking the pages in Chrome Lighthouse.
+  - Made product pages easier to index and share with JSON-LD and Open Graph, and tracked storefront events with Google Tag Manager. Pages rendered with SSR and ISR.
+- Tech: Next.js
 
-### Riachuelo – Fanlab & Carter's (via Leanwork) — Pleno Frontend Engineer
+### Riachuelo – Fanlab, Carter's (via Leanwork) — Frontend Engineer
 - Period: Jan 2021 – Dec 2022
 - URL: https://riachuelo.com.br/
 - Highlights:
-  - Digital fronts for Fanlab and Carter's within the Riachuelo ecosystem
-  - Loading performance and modular componentization
-- Tech: React, Next.js, TypeScript, AdobeXD, JavaScript
+  - Built and maintained the Fanlab and Carter's storefronts with React, Next.js, and TypeScript, shipping features on large teams.
+  - Improved app cold start by adding a YAML reader for environment config, so the team loaded env at startup instead of setting variables by hand.
+- Tech: React, Next.js, TypeScript
 
-### Centauro (via Leanwork) — Pleno Frontend Engineer
+### Centauro (via Leanwork) — Frontend Engineer
 - Period: Jan 2019 – Dec 2020
 - URL: https://centauro.com.br/
 - Highlights:
-  - Touch-screen React apps for in-store product customization (print on demand / omnichannel)
-  - Sustained high-traffic e-commerce
-- Tech: React, AdobeXD, JavaScript
+  - Built a product page where customers customized t-shirts on an HTML canvas with fabric.js.
+  - Moved in-store t-shirt customization to React and Electron totems, and migrated that UI from class components to functions.
+- Tech: React
 
 ### Leanwork — Junior Frontend Engineer
 - Period: Jul 2018 – Dec 2018
 - URL: https://leanwork.com.br/
 - Highlights:
-  - Pixel-perfect styling and maintenance of legacy e-commerces (HTML/CSS, JavaScript, jQuery, Photoshop)
-  - Educational platform in Angular (courses, exams, students)
-- Tech: HTML/CSS, JavaScript, jQuery, Photoshop, Angular
+  - Styled and fixed legacy storefronts (HTML, CSS, JavaScript, jQuery) and built an Angular app for courses, exams, and students.
+- Tech: HTML, CSS, JavaScript
 
-### Elitesoft Informática — Junior Fullstack Developer & Support
+### Elitesoft Informática — Junior Software Engineer
 - Period: Jan 2017 – Jun 2018
 - URL: https://www.elitesoft.com.br/
 - Highlights:
-  - ERP systems for ISPs: PHP, Angular, MySQL
-  - Development and maintenance plus process automation that reduced support operational load
-- Tech: PHP, Angular, MySQL, HTML/CSS
+  - Moved the ISP ERP UI from Qooxdoo to Angular and cut maintenance time by about 40%, working across PHP, MySQL, and Angular.
+  - Automated weekly support tasks that clients were doing by hand.
+- Tech: PHP, MySQL
 
 ---
 
 ## Skills
 
-- Frontend: React, Next.js, TypeScript, Vite.js, TailwindCSS, Shadcn UI, Angular, jQuery, HTML/CSS, JavaScript, SEO
-- Backend: Node.js, Fastify, Drizzle ORM, PostgreSQL, PHP, MySQL
-- DevOps: Docker, CI/CD, AWS
-- Design: Figma, AdobeXD, Photoshop
+- Frontend: React, Next.js, TanStack Start, TanStack Router, TypeScript, JavaScript, Vite, Tailwind CSS, shadcn/ui, HTML, CSS
+- Testing: Vitest
+- Backend: Node.js, Bun, Fastify, Prisma, Drizzle, PostgreSQL, SQLite, PHP, MySQL
+- DevOps: Docker, CI/CD, Azure, AWS, Cloudflare
+- Design: Figma, Adobe XD, Photoshop
 
 ## Education
 
-- Full-Stack 360° Post-Graduate with Artificial Intelligence — Rocketseat — Jan 2025 ~ Jun 2026
-- Computer Engineering (Bachelor's) — UNOPAR - Universidade Norte do Paraná — Jan 2013 ~ Dec 2017
+- Postgraduate Degree, Full-Stack JavaScript with AI — Rocketseat — Jan 2025 ~ Jun 2026
+- Bachelor of Computer Engineering — UNOPAR (Universidade Norte do Paraná) — 2013 ~ 2017
 
 ---
 

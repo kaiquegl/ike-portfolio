@@ -15,14 +15,41 @@ type RootRouteContext = {
   locale: Locale;
 };
 
+function isEnglishPath(pathname: string | undefined): boolean {
+  return pathname === "/en" || Boolean(pathname?.startsWith("/en/"));
+}
+
+function resolveHeadLocale(opts: unknown): Locale {
+  const headOpts = opts as {
+    context?: RootRouteContext;
+    match?: { context?: RootRouteContext; pathname?: string };
+    matches?: Array<{ context?: RootRouteContext; pathname?: string; fullPath?: string }>;
+  };
+  const contextLocale =
+    headOpts.context?.locale ??
+    headOpts.match?.context?.locale ??
+    headOpts.matches?.map((match) => match.context?.locale).find((locale) => locale !== undefined);
+
+  if (contextLocale) {
+    return contextLocale;
+  }
+
+  const pathname = headOpts.match?.pathname ?? headOpts.matches?.at(-1)?.pathname ?? headOpts.matches?.at(-1)?.fullPath;
+
+  if (isEnglishPath(pathname)) {
+    return "en";
+  }
+
+  return "pt-BR";
+}
+
 export const Route = createRootRoute({
   beforeLoad: ({ location }: { location: { pathname: string } }) => {
-    const isEnglishPath = location.pathname === "/en" || location.pathname.startsWith("/en/");
-    const locale: Locale = isEnglishPath ? "en" : "pt-BR";
+    const locale: Locale = isEnglishPath(location.pathname) ? "en" : "pt-BR";
     return { locale };
   },
   head: (opts) => {
-    const locale = (opts as unknown as { context?: RootRouteContext }).context?.locale ?? "pt-BR";
+    const locale = resolveHeadLocale(opts);
     const path = locale === "en" ? "/en" : "/";
     const seo = buildSeoHead({ locale, path });
 

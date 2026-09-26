@@ -1,11 +1,9 @@
 import { HighlightSkill } from "@/components/highlight-skill";
 import { RichText } from "@/components/rich-text";
 import { useTranslation } from "@/core/i18n/use-translation";
-import { getYearsOfExperience, withYearsOfExperience } from "@/core/utils/years-of-experience";
 
 export function About() {
   const t = useTranslation();
-  const years = getYearsOfExperience();
 
   return (
     <section className="flex flex-col gap-3 sm:gap-4" id="about">
@@ -16,11 +14,13 @@ export function About() {
           <li className="flex gap-3">
             <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <p className="text-pretty">
-              <RichText text={withYearsOfExperience(t("about.bullet1.before"), years)} />{" "}
-              <HighlightSkill value="react">React</HighlightSkill>,{" "}
-              <HighlightSkill value="nextjs">Next.js</HighlightSkill> {t("footer.connector")}{" "}
+              <RichText text={t("about.bullet1.before")} /> <HighlightSkill value="react">React</HighlightSkill>{" "}
+              <RichText text={t("about.bullet1.afterReact")} />{" "}
               <HighlightSkill value="typescript">TypeScript</HighlightSkill>{" "}
-              <RichText text={t("about.bullet1.after")} />
+              <RichText text={t("about.bullet1.afterTypeScript")} />{" "}
+              <HighlightSkill value="nextjs">Next.js</HighlightSkill> <RichText text={t("about.bullet1.afterNext")} />{" "}
+              <HighlightSkill value="tanstack-start">TanStack Start</HighlightSkill>
+              <RichText text={t("about.bullet1.afterTanstack")} />
             </p>
           </li>
           <li className="flex gap-3">

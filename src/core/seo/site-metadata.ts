@@ -86,13 +86,13 @@ export function buildPersonJsonLd() {
     knowsAbout: [
       "React",
       "Next.js",
+      "TanStack Start",
       "TypeScript",
-      "Vite.js",
-      "TailwindCSS",
-      "Shadcn UI",
-      "SEO",
-      "E-commerce",
-      "Frontend Architecture"
+      "Vitest",
+      "SSR",
+      "ISR",
+      "Core Web Vitals",
+      "Design Systems"
     ],
     knowsLanguage: ["pt-BR", "en"],
     alumniOf: {

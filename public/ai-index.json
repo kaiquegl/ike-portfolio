@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "generated": "2026-08-15",
+  "generated": "2026-09-26",
   "site": {
     "title": "Kaique Lima",
-    "description": "Senior Frontend Engineer with 9+ years of experience. Building e-commerce and admin panels with React, TypeScript, and Next.js.",
+    "description": "Senior Frontend Engineer building web applications with React, Next.js, TanStack Start, and TypeScript.",
     "url": "https://ike-dev.com.br",
     "locales": {
       "pt-BR": "https://ike-dev.com.br/",
@@ -14,7 +14,7 @@
     "name": "Kaique de Godoi Lima",
     "shortName": "Kaique Lima",
     "title": "Senior Frontend Engineer",
-    "yearsOfExperience": "9+",
+    "yearsOfExperience": "React since 2019 (7 years)",
     "location": "Londrina, Paraná, Brazil",
     "email": "kaikegl@proton.me",
     "handle": "@kaiquegl",
@@ -23,28 +23,34 @@
     "skills": [
       "React",
       "Next.js",
+      "TanStack Start",
+      "TanStack Router",
       "TypeScript",
-      "Vite.js",
-      "TailwindCSS",
-      "Shadcn UI",
+      "Vitest",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
       "Node.js",
       "Docker",
       "CI/CD",
-      "AWS",
-      "SEO",
-      "Figma"
+      "Azure",
+      "AWS"
     ]
   },
   "experience": [
     {
-      "company": "Wake Commerce",
+      "company": "Rheon",
       "via": "Leanwork",
-      "role": "Tech Lead Frontend",
+      "role": "Senior Frontend Engineer",
       "period": "Sep 2025 - Present",
       "current": true,
-      "url": "https://wake.tech/wake-commerce/",
-      "highlight": "Third-party integrations (Serasa, Hero Seguros, Tuna Pagamentos); Go-Live preparation",
-      "tech": ["Javascript", "HTML/CSS", "TailwindCSS"]
+      "highlight": "Cut Azure build time by 83% (6 minutes to 1 minute) by rebuilding the multi-tenant marketplace on TanStack Start; 800+ Vitest tests, about 78% line coverage",
+      "metrics": {
+        "azureBuildTimeReduction": "83%",
+        "tests": "800+",
+        "lineCoverage": "about 78%"
+      },
+      "tech": ["Azure", "TanStack Start", "Next.js", "Vitest"]
     },
     {
       "company": "Sinerlog",
@@ -52,83 +58,63 @@
       "role": "Tech Lead Frontend",
       "period": "Jan 2025 - Aug 2025",
       "url": "https://sinerlog.global/",
-      "highlight": "4 admin panels + 1 multi-tenant e-commerce; proprietary UI Registry; CI/CD with Docker",
-      "tech": [
-        "React",
-        "Next.js",
-        "Vite.js",
-        "TypeScript",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Docker",
-        "CI/CD"
-      ]
+      "highlight": "Led 3 frontend engineers delivering 4 admin applications and 1 multi-tenant e-commerce; shared UI registry inspired by shadcn/ui",
+      "tech": ["React", "Next.js", "Vite", "TypeScript", "shadcn/ui"]
     },
     {
-      "company": "FarmaciasApp (Grupo SC)",
+      "company": "FarmaciasApp",
       "via": "Leanwork",
       "role": "Senior Frontend Engineer",
       "period": "Jan 2023 - Dec 2024",
       "url": "https://farmaciasapp.com.br/",
-      "highlight": "Greenfield pharmacy marketplace; 15,000+ stores; +300% monthly sales in year one",
-      "metrics": {
-        "stores": "15,000+",
-        "monthlySalesGrowth": "+300%"
-      },
-      "tech": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "TailwindCSS",
-        "Shadcn UI",
-        "SEO"
-      ]
+      "highlight": "Next.js pharmacy marketplace: memoized templates, next/image, Lighthouse, JSON-LD, Open Graph, Google Tag Manager, SSR and ISR",
+      "tech": ["Next.js"]
     },
     {
-      "company": "Riachuelo (Fanlab & Carter's)",
+      "company": "Riachuelo (Fanlab, Carter's)",
       "via": "Leanwork",
-      "role": "Pleno Frontend Engineer",
+      "role": "Frontend Engineer",
       "period": "Jan 2021 - Dec 2022",
       "url": "https://riachuelo.com.br/",
-      "highlight": "Fanlab and Carter's digital fronts; performance and componentization",
+      "highlight": "Fanlab and Carter's storefronts; YAML env config for faster cold start",
       "tech": ["React", "Next.js", "TypeScript"]
     },
     {
       "company": "Centauro",
       "via": "Leanwork",
-      "role": "Pleno Frontend Engineer",
+      "role": "Frontend Engineer",
       "period": "Jan 2019 - Dec 2020",
       "url": "https://centauro.com.br/",
-      "highlight": "In-store React touch apps for print-on-demand; high-traffic e-commerce support",
-      "tech": ["React", "Javascript"]
+      "highlight": "HTML canvas t-shirt customization with fabric.js; React and Electron in-store totems",
+      "tech": ["React"]
     },
     {
       "company": "Leanwork",
       "role": "Junior Frontend Engineer",
       "period": "Jul 2018 - Dec 2018",
       "url": "https://leanwork.com.br/",
-      "highlight": "Legacy e-commerce styling/maintenance; Angular educational platform",
-      "tech": ["HTML/CSS", "Javascript", "jQuery", "Angular"]
+      "highlight": "Legacy storefront styling and fixes; Angular app for courses, exams, and students",
+      "tech": ["HTML", "CSS", "JavaScript"]
     },
     {
-      "company": "Elitesoft",
-      "role": "Junior Fullstack Developer & Support",
+      "company": "Elitesoft Informática",
+      "role": "Junior Software Engineer",
       "period": "Jan 2017 - Jun 2018",
       "url": "https://www.elitesoft.com.br/",
-      "highlight": "ISP ERP systems; PHP and Angular; support process automation",
-      "tech": ["PHP", "Angular", "MySQL", "HTML/CSS"]
+      "highlight": "Moved the ISP ERP UI from Qooxdoo to Angular and cut maintenance time by about 40%",
+      "tech": ["PHP", "MySQL"]
     }
   ],
   "education": [
     {
-      "title": "Full-Stack 360° Post-Graduate with Artificial Intelligence",
+      "title": "Postgraduate Degree, Full-Stack JavaScript with AI",
       "institution": "Rocketseat",
       "period": "Jan 2025 - Jun 2026"
     },
     {
-      "title": "Computer Engineering",
-      "institution": "UNOPAR - Universidade Norte do Paraná",
-      "period": "Jan 2013 - Dec 2017"
+      "title": "Bachelor of Computer Engineering",
+      "institution": "UNOPAR (Universidade Norte do Paraná)",
+      "period": "2013 - 2017"
     }
   ],
   "social": {
